@@ -2566,6 +2566,15 @@ const AppState = {
   currentTab: 'dashboard'
 };
 
+// Initialize colorMap from EMBEDDED_DATA
+window.colorMap = {};
+EMBEDDED_DATA.restaurants.forEach(r => { window.colorMap[r.name] = r.color || '#888'; });
+// Also rebuild when AppState is updated
+if (AppState.restaurants.length > 0) {
+  AppState.restaurants.forEach(r => { window.colorMap[r.name] = r.color || '#888'; });
+}
+
+
 // --- Helpers ---
 const fmt  = v => '$' + Number(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 const fmtN = v => Number(v||0).toLocaleString('en-US');
