@@ -2585,6 +2585,101 @@ const saveExpenses = () => localStorage.setItem('trgExpenses', JSON.stringify(Ap
 const CLOVER_BASE = 'https://api.clover.com/v3/merchants';
 
 // --- All Functions ---
+window.buildDeepDivePanels = function(sel1, sel2) {
+  const container = document.getElementById('deepDivePanels');
+  if (!container) return;
+  function buildPanel(name) {
+    const col = getColor(name);
+    const cats = window.categoryData[name] || [];
+    const tags = (window.orderStats[name]||{}).tagSales||[];
+    const detail = window.detailData[name] || {};
+    const stats = window.orderStats[name] || {};
+    const weekNet = getTotalByRestaurant(name);
+    const tenderEntries = Object.entries(stats.tenders||{});
+    const tenderTotal = tenderEntries.reduce((s,[,v])=>s+v,0);
+    const businessHours = Array.from({length:16},(_,i)=>i+7);
+    const hourlyData = businessHours.map(h => detail.hourly ? Math.round(detail.hourly[h]||0) : 0);
+    const peakHr = detail.hourly ? detail.hourly.indexOf(Math.max(...detail.hourly)) : -1;
+    const tColors = {'Credit Card':'#3b82f6','Debit Card':'#8b5cf6','Cash':'#22c55e','Gift Card':'#f59e0b','Debit':'#8b5cf6','Other':'#94a3b8'};
+    const mainTags = tags.filter(t=>['Food','Bar','Brunch','Barista','Liquor','Beer','Wine','Drinks - Non-Alcohol','Food Sales','Dessert'].includes(t.tag));
+    const catRows = cats.slice(0,8).map((c,i) => {
+      const pct = cats[0]&&cats[0].total>0 ? Math.round(c.total/cats[0].total*100) : 0;
+      return `<tr style="border-bottom:1px solid #f5f5f5">
+        <td style="padding:4px 8px;font-size:12px">${c.cat}</td>
+        <td style="text-align:right;font-size:12px;font-weight:600">${fmt(c.total)}</td>
+        <td><div style="background:#f0f2f5;border-radius:3px;height:5px;overflow:hidden;min-width:50px">
+          <div style="width:${pct}%;background:${col};height:5px"></div>
+        </div></td>
+      </tr>`;
+    }).join('');
+    const tagBadges = mainTags.map(t => {
+      const tagColors = {'Food':'#16a34a','Food Sales':'#16a34a','Bar':'#2563eb','Brunch':'#ca8a04','Barista':'#7c3aed','Liquor':'#dc2626','Beer':'#d97706','Wine':'#9333ea','Drinks - Non-Alcohol':'#0891b2','Dessert':'#ec4899'};
+      const tc = tagColors[t.tag]||'#666';
+      return `<div style="padding:8px 12px;border-radius:8px;background:#f8f9fa;border-left:3px solid ${tc}">
+        <div style="font-size:11px;color:${tc};font-weight:600">${t.tag}</div>
+        <div style="font-size:15px;font-weight:700">${fmt(t.total)}</div>
+      </div>`;
+    }).join('');
+    const tenderBadges = tenderEntries.map(([k,v]) => {
+      const pct = tenderTotal>0 ? (v/tenderTotal*100).toFixed(0) : 0;
+      const c = Object.entries(tColors).find(([tk])=>k.includes(tk.split(' ')[0]))?.[1]||'#888';
+      return `<div style="flex:1;min-width:80px;text-align:center;padding:8px;border-radius:6px;background:#f8f9fa">
+        <div style="font-size:18px;font-weight:700;color:${c}">${pct}%</div>
+        <div style="font-size:10px;color:#888;margin-top:2px">${k.replace(' Card','')}</div>
+      </div>`;
+    }).join('');
+    const topItems = (window.topItems[name]||[]).slice(0,8);
+    const topItemsHTML = topItems.map((item,i) => `<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f5f5f5;font-size:13px">
+      <span style="color:#aaa;margin-right:8px;min-width:14px">${i+1}</span>
+      <span style="flex:1">${item.name}</span>
+      <span style="font-weight:600;margin-left:8px">${fmt(item.total)}</span>
+      <span style="color:#aaa;margin-left:6px;font-size:11px">${item.count}x</span>
+    </div>`).join('');
+    const hourlyChartId = 'hourly_'+name.replace(/[^a-z]/gi,'');
+    return `<div class="card">
+      <div style="display:flex;align-items:center;border-bottom:2px solid ${col};padding-bottom:8px;margin-bottom:12px">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${col};margin-right:8px"></span>
+        <h3 style="margin:0;color:${col};font-size:16px">${name}</h3>
+        <div style="margin-left:auto;text-align:right">
+          <div style="font-size:18px;font-weight:800">${fmt(weekNet)}</div>
+          <div style="font-size:11px;color:#888">${stats.totalOrders||0} orders &middot; ${fmt(tenderTotal>0?weekNet/((stats.totalOrders||1)):0)} avg</div>
+        </div>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:8px">💰 Revenue Mix</div>
+      <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">${tagBadges}</div>
+      <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:8px">💳 Payment Methods</div>
+      <div style="display:flex;gap:6px;margin-bottom:14px">${tenderBadges}</div>
+      <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:6px">⏰ Hourly Sales Today Pattern</div>
+      <div style="position:relative;height:130px"><canvas id="${hourlyChartId}"></canvas></div>
+      <div style="font-size:11px;color:#888;margin-top:4px;text-align:center">Peak: ${peakHr<12?peakHr+'am':peakHr===12?'12pm':(peakHr-12)+'pm'}</div>
+      <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:8px;margin-top:12px">📋 Top Categories</div>
+      <table style="width:100%;border-collapse:collapse">${catRows}</table>
+      <div style="font-size:12px;font-weight:700;color:#555;margin-bottom:8px;margin-top:12px">🏆 Top 8 Items by Revenue</div>
+      <div>${topItemsHTML}</div>
+      <div style="font-size:11px;color:#888;margin-top:8px">💡 Tips: ${fmt(stats.totalTips||0)} (${weekNet>0?(((stats.totalTips||0)/weekNet)*100).toFixed(1):0}% of sales)</div>
+    </div>`;
+  }
+  container.innerHTML = buildPanel(sel1) + buildPanel(sel2);
+  setTimeout(() => {
+    [sel1, sel2].forEach(name => {
+      const detail = window.detailData[name] || {};
+      const hourlyChartId = 'hourly_'+name.replace(/[^a-z]/gi,'');
+      const hCtx = document.getElementById(hourlyChartId);
+      if (hCtx && detail.hourly) {
+        const businessHours = Array.from({length:16},(_,i)=>i+7);
+        new Chart(hCtx, {
+          type: 'bar',
+          data: {
+            labels: businessHours.map(h=>h<12?h+'am':h===12?'12pm':(h-12)+'pm'),
+            datasets: [{ data: businessHours.map(h=>Math.round(detail.hourly[h]||0)), backgroundColor: getColor(name)+'88', borderRadius:3 }]
+          },
+          options: { plugins:{legend:{display:false}}, scales:{x:{ticks:{font:{size:9}}},y:{ticks:{font:{size:9}}}}, maintainAspectRatio:false }
+        });
+      }
+    });
+  }, 100);
+};
+
 window.allRestaurants = AppState.restaurants;
 window.activeTab = window.activeTab || 'dashboard';
 window.getDates = () => {
