@@ -2681,6 +2681,20 @@ window.buildDeepDivePanels = function(sel1, sel2) {
 };
 
 window.allRestaurants = AppState.restaurants;
+// Initialize vendorConfig for Expenses tab
+window.vendorConfig = window.vendorConfig || {
+  'all':                { color: '#6366f1', icon: '📦' },
+  'US Foods':           { color: '#ef4444', icon: '🍖' },
+  'Webstaurant Store':  { color: '#f97316', icon: '🛒' },
+  'Amazon':             { color: '#f59e0b', icon: '📦' },
+  'Other':              { color: '#6b7280', icon: '🏪' }
+};
+// Initialize Expenses filter state
+window._expVendorTab    = window._expVendorTab    || 'all';
+window._expStatusFilter = window._expStatusFilter || 'all';
+window._expRestFilter   = window._expRestFilter   || 'all';
+window._expVendorFilter = window._expVendorFilter || 'all';
+window._expSort         = window._expSort         || 'date-desc';
 window.activeTab = window.activeTab || 'dashboard';
 window.getDates = () => {
   const dates = [...new Set(AppState.ingresosData.map(d=>d.date))].sort();
