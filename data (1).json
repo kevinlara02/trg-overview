@@ -1,0 +1,2508 @@
+{
+  "restaurants": [
+    {
+      "name": "Toast Brea",
+      "merchantId": "Y6VPGW62AZ551",
+      "color": "#3f3267",
+      "token": "a9e1e120-a131-81a8-a2fc-f4a4c753fa82"
+    },
+    {
+      "name": "Story Whittier",
+      "merchantId": "1T98P9RX1GJ91",
+      "color": "#2f7d88",
+      "token": "1f39eb6f-e46e-7a07-aae7-845eccb9df88"
+    },
+    {
+      "name": "Benny and Mary's",
+      "merchantId": "GHQ19WN06XY51",
+      "color": "#b6904e",
+      "token": "74b3b744-30de-1cc4-e96f-89a91309fe6f"
+    },
+    {
+      "name": "The Benediction",
+      "merchantId": "CSRYW9BYGBBX1",
+      "color": "#a8a8a8",
+      "token": "c5437709-78db-0f45-9acd-0a20bae95be9"
+    },
+    {
+      "name": "Story Anaheim",
+      "merchantId": "5VYJTMSVMSSF1",
+      "color": "#9d231e",
+      "token": "f4a00407-85f3-d2a1-7997-ca9497862eb0"
+    },
+    {
+      "name": "Toast Downey",
+      "merchantId": "HC6YRQCVV95K1",
+      "color": "#dba6a4",
+      "token": "532395f3-5396-f360-632d-de475188e934"
+    },
+    {
+      "name": "Little Toast",
+      "merchantId": "V3SEBWCSE6SW1",
+      "color": "#e09050",
+      "token": "2b0fdba9-d8de-e77c-98b9-eb20626556db"
+    }
+  ],
+  "colorMap": {
+    "Toast Brea": "#3f3267",
+    "Story Whittier": "#2f7d88",
+    "Benny and Mary's": "#b6904e",
+    "The Benediction": "#a8a8a8",
+    "Story Anaheim": "#9d231e",
+    "Toast Downey": "#dba6a4",
+    "Little Toast": "#e09050"
+  },
+  "ingresosData": [
+    {
+      "date": "2026-03-20",
+      "restaurant": "Toast Brea",
+      "gross": 5424.71,
+      "discounts": 0,
+      "tax": 375.77,
+      "tips": 443.63,
+      "net": 5048.94
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Story Whittier",
+      "gross": 11775.79,
+      "discounts": 0,
+      "tax": 1107.49,
+      "tips": 1458.91,
+      "net": 10668.3
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Toast Brea",
+      "gross": 18590.94,
+      "discounts": 0,
+      "tax": 1324.67,
+      "tips": 2470.83,
+      "net": 17266.27
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Story Whittier",
+      "gross": 20538.82,
+      "discounts": 0,
+      "tax": 1889.08,
+      "tips": 2346.1,
+      "net": 18649.74
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Toast Brea",
+      "gross": 25843,
+      "discounts": 0,
+      "tax": 1837.42,
+      "tips": 3658.71,
+      "net": 24005.58
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Story Whittier",
+      "gross": 11612.97,
+      "discounts": 0,
+      "tax": 1087.83,
+      "tips": 1290.26,
+      "net": 10525.14
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Toast Brea",
+      "gross": 7420.38,
+      "discounts": 0,
+      "tax": 530.84,
+      "tips": 981.13,
+      "net": 6889.54
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Story Whittier",
+      "gross": 2869.45,
+      "discounts": 0,
+      "tax": 262.32,
+      "tips": 301.75,
+      "net": 2607.13
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Toast Brea",
+      "gross": 4937.08,
+      "discounts": 0,
+      "tax": 355.08,
+      "tips": 683,
+      "net": 4582
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Story Whittier",
+      "gross": 3337.74,
+      "discounts": 0,
+      "tax": 300.45,
+      "tips": 318.45,
+      "net": 3037.29
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Toast Brea",
+      "gross": 4117.7,
+      "discounts": 0,
+      "tax": 296.2,
+      "tips": 592.01,
+      "net": 3821.5
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Story Whittier",
+      "gross": 3870.41,
+      "discounts": 0,
+      "tax": 347.05,
+      "tips": 231.13,
+      "net": 3523.36
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Benny and Mary's",
+      "gross": 7465.21,
+      "discounts": 0,
+      "tax": 513.27,
+      "tips": 1318.97,
+      "net": 6951.94
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Benny and Mary's",
+      "gross": 11399.2,
+      "discounts": 0,
+      "tax": 743.68,
+      "tips": 1212.36,
+      "net": 10655.52
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Benny and Mary's",
+      "gross": 7318.68,
+      "discounts": 0,
+      "tax": 501.04,
+      "tips": 1090,
+      "net": 6817.64
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Benny and Mary's",
+      "gross": 5596.54,
+      "discounts": 0,
+      "tax": 382.3,
+      "tips": 672.34,
+      "net": 5214.24
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Benny and Mary's",
+      "gross": 3762.77,
+      "discounts": 0,
+      "tax": 263.82,
+      "tips": 592.31,
+      "net": 3498.95
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Benny and Mary's",
+      "gross": 15379.71,
+      "discounts": 0,
+      "tax": 980.17,
+      "tips": 1303.84,
+      "net": 14399.54
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "The Benediction",
+      "gross": 3162.3,
+      "discounts": 0,
+      "tax": 282.3,
+      "tips": 329.07,
+      "net": 2880
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "The Benediction",
+      "gross": 7403.08,
+      "discounts": 0,
+      "tax": 656.61,
+      "tips": 783.57,
+      "net": 6746.47
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "The Benediction",
+      "gross": 10059,
+      "discounts": 0,
+      "tax": 899.69,
+      "tips": 1137.54,
+      "net": 9159.31
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "The Benediction",
+      "gross": 1910.2,
+      "discounts": 0,
+      "tax": 174.65,
+      "tips": 256.39,
+      "net": 1735.55
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "The Benediction",
+      "gross": 1692.59,
+      "discounts": 0,
+      "tax": 154.24,
+      "tips": 175.54,
+      "net": 1538.35
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "The Benediction",
+      "gross": 2313.61,
+      "discounts": 0,
+      "tax": 206.56,
+      "tips": 197.36,
+      "net": 2107.05
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Story Anaheim",
+      "gross": 18339.62,
+      "discounts": 0,
+      "tax": 1282.63,
+      "tips": 2614.53,
+      "net": 17056.99
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Story Anaheim",
+      "gross": 30318.05,
+      "discounts": 0,
+      "tax": 2154.4,
+      "tips": 4318.71,
+      "net": 28163.65
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Story Anaheim",
+      "gross": 21578.91,
+      "discounts": 0,
+      "tax": 1548.85,
+      "tips": 3388.68,
+      "net": 20030.06
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Story Anaheim",
+      "gross": 8744.43,
+      "discounts": 0,
+      "tax": 620.08,
+      "tips": 1448.86,
+      "net": 8124.35
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Story Anaheim",
+      "gross": 11620.82,
+      "discounts": 0,
+      "tax": 828.01,
+      "tips": 2132.32,
+      "net": 10792.81
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Story Anaheim",
+      "gross": 11610.46,
+      "discounts": 0,
+      "tax": 829.51,
+      "tips": 1444.17,
+      "net": 10780.95
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Toast Downey",
+      "gross": 14096.65,
+      "discounts": 0,
+      "tax": 1297.68,
+      "tips": 1060.68,
+      "net": 12798.97
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Toast Downey",
+      "gross": 46157.79,
+      "discounts": 0,
+      "tax": 4021.66,
+      "tips": 1895.28,
+      "net": 42136.13
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Toast Downey",
+      "gross": 32544.14,
+      "discounts": 0,
+      "tax": 2977.19,
+      "tips": 2028.56,
+      "net": 29566.95
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Toast Downey",
+      "gross": 10465.48,
+      "discounts": 0,
+      "tax": 980.41,
+      "tips": 667.52,
+      "net": 9485.07
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Toast Downey",
+      "gross": 8381.17,
+      "discounts": 0,
+      "tax": 769.2,
+      "tips": 632.62,
+      "net": 7611.97
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Toast Downey",
+      "gross": 8842.46,
+      "discounts": 0,
+      "tax": 832.11,
+      "tips": 796.45,
+      "net": 8010.35
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Little Toast",
+      "gross": 2090.78,
+      "discounts": 0,
+      "tax": 192.31,
+      "tips": 192.44,
+      "net": 1898.47
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Little Toast",
+      "gross": 4478.48,
+      "discounts": 0,
+      "tax": 416.9,
+      "tips": 517.56,
+      "net": 4061.58
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Little Toast",
+      "gross": 6772.03,
+      "discounts": 0,
+      "tax": 631.72,
+      "tips": 805.06,
+      "net": 6140.31
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Little Toast",
+      "gross": 1416.81,
+      "discounts": 0,
+      "tax": 132.35,
+      "tips": 122.32,
+      "net": 1284.46
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Little Toast",
+      "gross": 1261.94,
+      "discounts": 0,
+      "tax": 119.94,
+      "tips": 137.85,
+      "net": 1142
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Little Toast",
+      "gross": 1451.9,
+      "discounts": 0,
+      "tax": 137.98,
+      "tips": 194.41,
+      "net": 1313.92
+    }
+  ],
+  "expenses": [],
+  "topItems": {
+    "Toast Brea": [
+      {
+        "name": "Simple Breakfast",
+        "total": 3971,
+        "count": 209
+      },
+      {
+        "name": "Chilaquiles",
+        "total": 2322,
+        "count": 129
+      },
+      {
+        "name": "Denver",
+        "total": 1672,
+        "count": 88
+      },
+      {
+        "name": "Perfect Avocado",
+        "total": 1566,
+        "count": 87
+      },
+      {
+        "name": "Coffee",
+        "total": 1504.5,
+        "count": 354
+      },
+      {
+        "name": "Country Fried Steak Breakfast",
+        "total": 1428,
+        "count": 51
+      },
+      {
+        "name": "Veggie",
+        "total": 1377,
+        "count": 81
+      },
+      {
+        "name": "Flatiron Steak & Eggs",
+        "total": 1326,
+        "count": 34
+      },
+      {
+        "name": "Short Rib Chilaquiles",
+        "total": 1326,
+        "count": 51
+      },
+      {
+        "name": "Spanish",
+        "total": 1292,
+        "count": 68
+      },
+      {
+        "name": "Steak Chilaquiles",
+        "total": 1248,
+        "count": 32
+      },
+      {
+        "name": "Cali",
+        "total": 1241,
+        "count": 73
+      },
+      {
+        "name": "Classic Benedict",
+        "total": 1216,
+        "count": 64
+      },
+      {
+        "name": "Bacon Burrito",
+        "total": 1180,
+        "count": 59
+      },
+      {
+        "name": "Salmon Cucumber",
+        "total": 1104,
+        "count": 48
+      }
+    ],
+    "Little Toast": [
+      {
+        "name": "Simple Breakfast",
+        "total": 1786,
+        "count": 94
+      },
+      {
+        "name": "Chimi",
+        "total": 700,
+        "count": 25
+      },
+      {
+        "name": "Spanish Omelette",
+        "total": 646,
+        "count": 34
+      },
+      {
+        "name": "Perfect Avocado",
+        "total": 594,
+        "count": 33
+      },
+      {
+        "name": "Denver Omelette",
+        "total": 589,
+        "count": 31
+      },
+      {
+        "name": "Steak Breakfast",
+        "total": 585,
+        "count": 15
+      },
+      {
+        "name": "House Benny",
+        "total": 528,
+        "count": 24
+      },
+      {
+        "name": "Bacon Avo Benny",
+        "total": 506,
+        "count": 23
+      },
+      {
+        "name": "SantaBarb Benny",
+        "total": 400,
+        "count": 16
+      },
+      {
+        "name": "Pancake",
+        "total": 352,
+        "count": 32
+      },
+      {
+        "name": "Bacon Up",
+        "total": 324,
+        "count": 18
+      },
+      {
+        "name": "Cheesecake Full",
+        "total": 323,
+        "count": 17
+      },
+      {
+        "name": "Waffle",
+        "total": 319,
+        "count": 29
+      },
+      {
+        "name": "Veggie Omelet",
+        "total": 306,
+        "count": 18
+      },
+      {
+        "name": "Classic Benny",
+        "total": 304,
+        "count": 16
+      }
+    ],
+    "Benny and Mary's": [
+      {
+        "name": "Custom Item",
+        "total": 1350.56,
+        "count": 53
+      },
+      {
+        "name": "Tomahawk",
+        "total": 1200,
+        "count": 6
+      },
+      {
+        "name": "Chilean Sea Bass",
+        "total": 1078,
+        "count": 22
+      },
+      {
+        "name": "Ribeye SANDWICH",
+        "total": 897,
+        "count": 39
+      },
+      {
+        "name": "Cheese Dumplings",
+        "total": 896,
+        "count": 56
+      },
+      {
+        "name": "Yellowfin Bowl",
+        "total": 882,
+        "count": 42
+      },
+      {
+        "name": "Chicken Med Bowl",
+        "total": 880,
+        "count": 44
+      },
+      {
+        "name": "Ribeye Entree",
+        "total": 833,
+        "count": 17
+      },
+      {
+        "name": "Short Rib Entree",
+        "total": 782,
+        "count": 23
+      },
+      {
+        "name": "Caesar",
+        "total": 750,
+        "count": 50
+      },
+      {
+        "name": "Salmon Entree",
+        "total": 741,
+        "count": 19
+      },
+      {
+        "name": "STROGANOFF",
+        "total": 725,
+        "count": 25
+      },
+      {
+        "name": "Adult Green Juice",
+        "total": 672,
+        "count": 42
+      },
+      {
+        "name": "El Diablo Smash",
+        "total": 672,
+        "count": 42
+      },
+      {
+        "name": "Chicken Piccata",
+        "total": 667,
+        "count": 29
+      }
+    ],
+    "Story Whittier": [
+      {
+        "name": "Tea Experience",
+        "total": 5440,
+        "count": 136
+      },
+      {
+        "name": "Steak Chilaquiles",
+        "total": 1443,
+        "count": 37
+      },
+      {
+        "name": "Short Rib Chilaquiles",
+        "total": 1430,
+        "count": 55
+      },
+      {
+        "name": "Chilaquiles",
+        "total": 1314,
+        "count": 73
+      },
+      {
+        "name": "D-Prefix",
+        "total": 1305,
+        "count": 29
+      },
+      {
+        "name": "Simple Breakfast",
+        "total": 1178,
+        "count": 62
+      },
+      {
+        "name": "Pork Chilaquiles",
+        "total": 1008,
+        "count": 42
+      },
+      {
+        "name": "Mimosa Flight ",
+        "total": 1008,
+        "count": 28
+      },
+      {
+        "name": "Steak Breakfast",
+        "total": 975,
+        "count": 25
+      },
+      {
+        "name": "Breakfast Burrito",
+        "total": 880,
+        "count": 44
+      },
+      {
+        "name": "Perfect Avocado Toast",
+        "total": 828,
+        "count": 46
+      },
+      {
+        "name": "Chicken & Waffles",
+        "total": 740,
+        "count": 37
+      },
+      {
+        "name": "Short Rib Enchiladas",
+        "total": 650,
+        "count": 25
+      },
+      {
+        "name": "Coffee",
+        "total": 612,
+        "count": 144
+      },
+      {
+        "name": "Flavored Latte",
+        "total": 591.5,
+        "count": 91
+      }
+    ],
+    "The Benediction": [
+      {
+        "name": "Simple Breakfast",
+        "total": 1615,
+        "count": 85
+      },
+      {
+        "name": "Steak & Eggs",
+        "total": 1248,
+        "count": 32
+      },
+      {
+        "name": "Santa Barb Benny",
+        "total": 1200,
+        "count": 48
+      },
+      {
+        "name": "Denver",
+        "total": 798,
+        "count": 42
+      },
+      {
+        "name": "Class Benny",
+        "total": 760,
+        "count": 40
+      },
+      {
+        "name": "Bac Avo Benny",
+        "total": 748,
+        "count": 34
+      },
+      {
+        "name": "Chicken & Waffle",
+        "total": 660,
+        "count": 33
+      },
+      {
+        "name": "Steak & Chilaquiles",
+        "total": 616,
+        "count": 22
+      },
+      {
+        "name": "Ribeye & Eggs",
+        "total": 540,
+        "count": 12
+      },
+      {
+        "name": "Spanish",
+        "total": 532,
+        "count": 28
+      },
+      {
+        "name": "Coffee",
+        "total": 514.25,
+        "count": 121
+      },
+      {
+        "name": "Perfect Avo",
+        "total": 504,
+        "count": 28
+      },
+      {
+        "name": "Veggie",
+        "total": 493,
+        "count": 29
+      },
+      {
+        "name": "Mexican Mocha",
+        "total": 468,
+        "count": 72
+      },
+      {
+        "name": "Classic Smash",
+        "total": 468,
+        "count": 26
+      }
+    ],
+    "Story Anaheim": [
+      {
+        "name": "Tea Experience Mad Hatter",
+        "total": 15504,
+        "count": 456
+      },
+      {
+        "name": "Chicken Piccata",
+        "total": 3588,
+        "count": 138
+      },
+      {
+        "name": "Short Rib Pasta",
+        "total": 2828,
+        "count": 101
+      },
+      {
+        "name": "Chilean Sea Bass Entree",
+        "total": 2400,
+        "count": 40
+      },
+      {
+        "name": "Braised Short Rib",
+        "total": 2176,
+        "count": 64
+      },
+      {
+        "name": "Wycliff (Tea Experience)",
+        "total": 1794,
+        "count": 299
+      },
+      {
+        "name": "Yuzu Lobster Pasta",
+        "total": 1634,
+        "count": 43
+      },
+      {
+        "name": "Classic Smashburger",
+        "total": 1387,
+        "count": 73
+      },
+      {
+        "name": "Short Rib Grilled Cheese",
+        "total": 1344,
+        "count": 64
+      },
+      {
+        "name": "Braised Short Rib Tacos",
+        "total": 1320,
+        "count": 66
+      },
+      {
+        "name": "Chicken Milanese",
+        "total": 1311,
+        "count": 57
+      },
+      {
+        "name": "Ribeye Steak",
+        "total": 1260,
+        "count": 21
+      },
+      {
+        "name": "HH Braised Short Rib Tacos",
+        "total": 1260,
+        "count": 84
+      },
+      {
+        "name": "Salmon Entree",
+        "total": 1254,
+        "count": 33
+      },
+      {
+        "name": "Steak Sandwich",
+        "total": 1176,
+        "count": 49
+      }
+    ],
+    "Toast Downey": [
+      {
+        "name": "Chilaquiles",
+        "total": 4752,
+        "count": 264
+      },
+      {
+        "name": "Bottomless",
+        "total": 4574,
+        "count": 268
+      },
+      {
+        "name": "Steak Chilaquiles",
+        "total": 3939,
+        "count": 101
+      },
+      {
+        "name": "Simple Breakfast",
+        "total": 3895,
+        "count": 205
+      },
+      {
+        "name": "Chicken & Waffles",
+        "total": 3340,
+        "count": 167
+      },
+      {
+        "name": "Steak & Eggs",
+        "total": 2730,
+        "count": 70
+      },
+      {
+        "name": "Barbacoa  Chilaquiles",
+        "total": 2340,
+        "count": 90
+      },
+      {
+        "name": "Pork Chilaquiles",
+        "total": 2136,
+        "count": 89
+      },
+      {
+        "name": "Classic French",
+        "total": 1989,
+        "count": 153
+      },
+      {
+        "name": "Mimosa Flight",
+        "total": 1872,
+        "count": 52
+      },
+      {
+        "name": "Mimosa Bottle",
+        "total": 1725,
+        "count": 69
+      },
+      {
+        "name": "Coffee",
+        "total": 1534.25,
+        "count": 361
+      },
+      {
+        "name": "Wings",
+        "total": 1515,
+        "count": 101
+      },
+      {
+        "name": "Margarita Flight",
+        "total": 1408,
+        "count": 44
+      },
+      {
+        "name": "Strawberry Cheesecake",
+        "total": 1387,
+        "count": 73
+      }
+    ]
+  },
+  "categoryData": {
+    "Toast Brea": [
+      {
+        "cat": "Classic Breakfast",
+        "total": 20383
+      },
+      {
+        "cat": "Griddle",
+        "total": 7630.5
+      },
+      {
+        "cat": "Benedicts",
+        "total": 5900
+      },
+      {
+        "cat": "Omelette",
+        "total": 4998
+      },
+      {
+        "cat": "Toast",
+        "total": 3911
+      },
+      {
+        "cat": "Server Drinks",
+        "total": 2256.75
+      },
+      {
+        "cat": "Brunch Cocktails",
+        "total": 2217
+      },
+      {
+        "cat": "Burger/Sandwich",
+        "total": 2044
+      },
+      {
+        "cat": "Apps",
+        "total": 1877
+      },
+      {
+        "cat": "Mimosas",
+        "total": 1804
+      },
+      {
+        "cat": "Main",
+        "total": 1661
+      },
+      {
+        "cat": "Barista",
+        "total": 958.25
+      },
+      {
+        "cat": "Kids",
+        "total": 951
+      },
+      {
+        "cat": "Tipsy Barista",
+        "total": 938
+      },
+      {
+        "cat": "Sides",
+        "total": 893.5
+      },
+      {
+        "cat": "Beer",
+        "total": 834
+      },
+      {
+        "cat": "Salad",
+        "total": 829
+      },
+      {
+        "cat": "Dinner Cocktails",
+        "total": 607
+      },
+      {
+        "cat": "Wine (Glass)",
+        "total": 434
+      },
+      {
+        "cat": "Dessert",
+        "total": 351
+      },
+      {
+        "cat": "Tequila",
+        "total": 320
+      },
+      {
+        "cat": "Vodka ",
+        "total": 317
+      },
+      {
+        "cat": "A La Carte",
+        "total": 312
+      },
+      {
+        "cat": "Flatbread",
+        "total": 296
+      },
+      {
+        "cat": "Bourbon/Whiskey",
+        "total": 108
+      },
+      {
+        "cat": "Wine (Bottle)",
+        "total": 76
+      },
+      {
+        "cat": "Bar Misc",
+        "total": 64
+      },
+      {
+        "cat": "Gin",
+        "total": 56
+      },
+      {
+        "cat": "Cordials",
+        "total": 21
+      },
+      {
+        "cat": "Rum",
+        "total": 20
+      },
+      {
+        "cat": "Other",
+        "total": 2
+      }
+    ],
+    "Little Toast": [
+      {
+        "cat": "Toasts",
+        "total": 2980
+      },
+      {
+        "cat": "Benedicts",
+        "total": 2457
+      },
+      {
+        "cat": "Classic Breakfast",
+        "total": 2371
+      },
+      {
+        "cat": "Omelletes",
+        "total": 1796
+      },
+      {
+        "cat": "French Toasts",
+        "total": 1209.5
+      },
+      {
+        "cat": "Pancakes & Waffles",
+        "total": 769
+      },
+      {
+        "cat": "Kids Meals",
+        "total": 357
+      },
+      {
+        "cat": "Drinks",
+        "total": 229.5
+      },
+      {
+        "cat": "Breakfast Sides",
+        "total": 130
+      },
+      {
+        "cat": "Other",
+        "total": 0.75
+      }
+    ],
+    "Benny and Mary's": [
+      {
+        "cat": "Main",
+        "total": 6840
+      },
+      {
+        "cat": "Apps",
+        "total": 4082
+      },
+      {
+        "cat": "Salads/Bowls",
+        "total": 3489
+      },
+      {
+        "cat": "Dinner Cocktails",
+        "total": 3461
+      },
+      {
+        "cat": "Burger/Sandwich",
+        "total": 3396
+      },
+      {
+        "cat": "Red Bottle",
+        "total": 2017
+      },
+      {
+        "cat": "Drinks",
+        "total": 1944.75
+      },
+      {
+        "cat": "Other",
+        "total": 1778.72
+      },
+      {
+        "cat": "Classic Breakfast",
+        "total": 1546
+      },
+      {
+        "cat": "BEO / PRIVATE EVENT",
+        "total": 1325
+      },
+      {
+        "cat": "Dessert",
+        "total": 1317.95
+      },
+      {
+        "cat": "Sparkling Bottle",
+        "total": 1314
+      },
+      {
+        "cat": "Happy Hour Drinks",
+        "total": 1239
+      },
+      {
+        "cat": "Happy Hour Food ",
+        "total": 1024
+      },
+      {
+        "cat": "Tequila",
+        "total": 841
+      },
+      {
+        "cat": "Brunch Cocktails",
+        "total": 840
+      },
+      {
+        "cat": "White Glass",
+        "total": 825
+      },
+      {
+        "cat": "Griddle",
+        "total": 812
+      },
+      {
+        "cat": "Beer",
+        "total": 745
+      },
+      {
+        "cat": "Bourbon/Whiskey",
+        "total": 741
+      },
+      {
+        "cat": "Benedicts",
+        "total": 655
+      },
+      {
+        "cat": "Vodka",
+        "total": 625
+      },
+      {
+        "cat": "Red Glass",
+        "total": 592
+      },
+      {
+        "cat": "Mimosas",
+        "total": 485
+      },
+      {
+        "cat": "White Bottle",
+        "total": 409
+      },
+      {
+        "cat": "Flatbread",
+        "total": 407
+      },
+      {
+        "cat": "Sides",
+        "total": 380.5
+      },
+      {
+        "cat": "A La Carte",
+        "total": 195
+      },
+      {
+        "cat": "Breakfast Bowl",
+        "total": 193
+      },
+      {
+        "cat": "Rose Glass",
+        "total": 146
+      },
+      {
+        "cat": "Toast",
+        "total": 129
+      },
+      {
+        "cat": "Rye",
+        "total": 122
+      },
+      {
+        "cat": "Catering",
+        "total": 112
+      },
+      {
+        "cat": "Gin",
+        "total": 94
+      },
+      {
+        "cat": "Brandy/Cognac",
+        "total": 80
+      },
+      {
+        "cat": "Cordials",
+        "total": 63
+      },
+      {
+        "cat": "Kids",
+        "total": 60
+      },
+      {
+        "cat": "Mezcal",
+        "total": 36
+      },
+      {
+        "cat": "Scotch",
+        "total": 34
+      },
+      {
+        "cat": "Rum",
+        "total": 24
+      }
+    ],
+    "Story Whittier": [
+      {
+        "cat": "SHAREABLES",
+        "total": 8806
+      },
+      {
+        "cat": "Bubbly",
+        "total": 6516
+      },
+      {
+        "cat": "THE CHILAQUILES ADVENTURE",
+        "total": 5330
+      },
+      {
+        "cat": "THE CLASSIC CHAPTER",
+        "total": 4527
+      },
+      {
+        "cat": "sTORy MAINS",
+        "total": 4002
+      },
+      {
+        "cat": "N/A Barista ",
+        "total": 2188.75
+      },
+      {
+        "cat": "THE BENEDICT BOOK",
+        "total": 1873
+      },
+      {
+        "cat": "PANCAKE & WAFFLE STORIES",
+        "total": 1815
+      },
+      {
+        "cat": "SCRAMBLES & SIDE QUESTS",
+        "total": 1742
+      },
+      {
+        "cat": "Happy Hour",
+        "total": 1729
+      },
+      {
+        "cat": "HANDHELD HEROS",
+        "total": 1565
+      },
+      {
+        "cat": "Bar Menu ",
+        "total": 1375
+      },
+      {
+        "cat": "Mimosas",
+        "total": 1338
+      },
+      {
+        "cat": "Banquet",
+        "total": 1305
+      },
+      {
+        "cat": "LARA DINNER 3/21/26",
+        "total": 1305
+      },
+      {
+        "cat": "Story Cocktails",
+        "total": 1170
+      },
+      {
+        "cat": "THE TOASTED TALES",
+        "total": 1151
+      },
+      {
+        "cat": "Other",
+        "total": 1130
+      },
+      {
+        "cat": "FRENCH TOAST CHRONICLES",
+        "total": 1060
+      },
+      {
+        "cat": "Backstory 85",
+        "total": 954
+      },
+      {
+        "cat": "House Cocktails",
+        "total": 944
+      },
+      {
+        "cat": "Soda & Juice",
+        "total": 747
+      },
+      {
+        "cat": "Brunch Cocktails",
+        "total": 679
+      },
+      {
+        "cat": "Breakfast Sides",
+        "total": 666.25
+      },
+      {
+        "cat": "Beer",
+        "total": 547
+      },
+      {
+        "cat": "KIDS BREAKFAST MENU",
+        "total": 514
+      },
+      {
+        "cat": "STORY DESSERTS",
+        "total": 451
+      },
+      {
+        "cat": "American Whiskey",
+        "total": 399
+      },
+      {
+        "cat": "Coffee Cocktails",
+        "total": 364
+      },
+      {
+        "cat": "Spirits Vodka",
+        "total": 351
+      },
+      {
+        "cat": "SALADS",
+        "total": 336
+      },
+      {
+        "cat": "Tequila & Mezcal",
+        "total": 326
+      },
+      {
+        "cat": "Well Spirits",
+        "total": 312
+      },
+      {
+        "cat": "Cordials/Liqueur",
+        "total": 253
+      },
+      {
+        "cat": "Wine By Glass",
+        "total": 251
+      },
+      {
+        "cat": "Wine Bottle",
+        "total": 222
+      },
+      {
+        "cat": "Margaritas",
+        "total": 204
+      },
+      {
+        "cat": "DINNER KIDS",
+        "total": 130
+      },
+      {
+        "cat": "Classic Cocktails",
+        "total": 70
+      },
+      {
+        "cat": "Non Alcoholic Low ABV",
+        "total": 63
+      },
+      {
+        "cat": "World Whiskey",
+        "total": 45
+      },
+      {
+        "cat": "Spirits Rum",
+        "total": 36
+      },
+      {
+        "cat": "Spirits Gin",
+        "total": 24
+      },
+      {
+        "cat": "Spirits Brandy & Cognac",
+        "total": 16
+      },
+      {
+        "cat": "Spirits Cordials",
+        "total": 9
+      },
+      {
+        "cat": "TOGO ORDER",
+        "total": 0
+      }
+    ],
+    "The Benediction": [
+      {
+        "cat": "Classics",
+        "total": 5472
+      },
+      {
+        "cat": "Eggs Benedict",
+        "total": 4183
+      },
+      {
+        "cat": "Omelette",
+        "total": 1993
+      },
+      {
+        "cat": "Toast",
+        "total": 1869
+      },
+      {
+        "cat": "Pancakes/Waffles",
+        "total": 1826
+      },
+      {
+        "cat": "Drinks",
+        "total": 1294.5
+      },
+      {
+        "cat": "Lunch",
+        "total": 1191
+      },
+      {
+        "cat": "French Toast",
+        "total": 1065.5
+      },
+      {
+        "cat": "Bar",
+        "total": 895
+      },
+      {
+        "cat": "Coffee",
+        "total": 514.25
+      },
+      {
+        "cat": "Kids",
+        "total": 322
+      },
+      {
+        "cat": "Sides",
+        "total": 213
+      },
+      {
+        "cat": "Desserts",
+        "total": 12
+      },
+      {
+        "cat": "Other",
+        "total": 3.5
+      }
+    ],
+    "Story Anaheim": [
+      {
+        "cat": "Tea Experience",
+        "total": 18126
+      },
+      {
+        "cat": "Main Entrees",
+        "total": 13093
+      },
+      {
+        "cat": "Appetizers ",
+        "total": 8347
+      },
+      {
+        "cat": "Pizza & Pasta ",
+        "total": 6740
+      },
+      {
+        "cat": "Sandwiches & Burgers",
+        "total": 5826
+      },
+      {
+        "cat": "House Cocktails",
+        "total": 5690
+      },
+      {
+        "cat": "HH Food",
+        "total": 4760
+      },
+      {
+        "cat": "Wines By The Glass",
+        "total": 3795
+      },
+      {
+        "cat": "Soups & Salads",
+        "total": 3638
+      },
+      {
+        "cat": "Brunch Classics",
+        "total": 3586
+      },
+      {
+        "cat": "HH Cocktails",
+        "total": 2750
+      },
+      {
+        "cat": "Desserts",
+        "total": 2410
+      },
+      {
+        "cat": "MM Food",
+        "total": 2278
+      },
+      {
+        "cat": "Drinks",
+        "total": 2055
+      },
+      {
+        "cat": "Vodka",
+        "total": 1869
+      },
+      {
+        "cat": "HH Craft Beers & Wine",
+        "total": 1395
+      },
+      {
+        "cat": "Sides",
+        "total": 1265
+      },
+      {
+        "cat": "Brunch Sweets ",
+        "total": 1235
+      },
+      {
+        "cat": "Bourbon/Irish/Can",
+        "total": 1231
+      },
+      {
+        "cat": "Liqueurs/Amaros/Apertif",
+        "total": 1078
+      },
+      {
+        "cat": "Wines By The Bottle",
+        "total": 1011
+      },
+      {
+        "cat": "Tequila",
+        "total": 994
+      },
+      {
+        "cat": "WW Bottles",
+        "total": 836
+      },
+      {
+        "cat": "Kids Menu",
+        "total": 762
+      },
+      {
+        "cat": "Draft Beer",
+        "total": 743
+      },
+      {
+        "cat": "Brunch Cocktails",
+        "total": 702
+      },
+      {
+        "cat": "Gin",
+        "total": 484
+      },
+      {
+        "cat": "Flights",
+        "total": 415
+      },
+      {
+        "cat": "HH Wells",
+        "total": 410
+      },
+      {
+        "cat": "Brunch Sides",
+        "total": 409.5
+      },
+      {
+        "cat": "TT Food",
+        "total": 296
+      },
+      {
+        "cat": "Rye",
+        "total": 226
+      },
+      {
+        "cat": "Bottled Beer",
+        "total": 171
+      },
+      {
+        "cat": "Mezcal",
+        "total": 139
+      },
+      {
+        "cat": "TT Cocktials",
+        "total": 126
+      },
+      {
+        "cat": "Scotch/Japanese ",
+        "total": 104
+      },
+      {
+        "cat": "WW Charcuterie Board",
+        "total": 90
+      },
+      {
+        "cat": "MM Cocktails",
+        "total": 81
+      },
+      {
+        "cat": "Rum",
+        "total": 50
+      },
+      {
+        "cat": "Other",
+        "total": 38
+      }
+    ],
+    "Toast Downey": [
+      {
+        "cat": "Breakfast Classics",
+        "total": 15228
+      },
+      {
+        "cat": "Chilaquiles",
+        "total": 13717
+      },
+      {
+        "cat": "Brunch & Tipsy Barista",
+        "total": 8204
+      },
+      {
+        "cat": "Mimosas & Bubbly",
+        "total": 7838.5
+      },
+      {
+        "cat": "Appetizers",
+        "total": 6411
+      },
+      {
+        "cat": "Pancakes & Waffles",
+        "total": 6012
+      },
+      {
+        "cat": "French Toast",
+        "total": 5501
+      },
+      {
+        "cat": "Margaritas",
+        "total": 5097
+      },
+      {
+        "cat": "Flights",
+        "total": 3920
+      },
+      {
+        "cat": "Burgers & Sandwiches",
+        "total": 3832
+      },
+      {
+        "cat": "Soda & Juice",
+        "total": 3748.5
+      },
+      {
+        "cat": "Mains ",
+        "total": 3458
+      },
+      {
+        "cat": "Omelette",
+        "total": 3210
+      },
+      {
+        "cat": "Benedict",
+        "total": 2666
+      },
+      {
+        "cat": "Toast",
+        "total": 2505
+      },
+      {
+        "cat": "Lemonades +",
+        "total": 2405.25
+      },
+      {
+        "cat": "Breakfast Sides",
+        "total": 1970
+      },
+      {
+        "cat": "Tequila/Mezcal",
+        "total": 1823
+      },
+      {
+        "cat": "House Cocktails",
+        "total": 1819
+      },
+      {
+        "cat": "Large Format Cocktails",
+        "total": 1680
+      },
+      {
+        "cat": "Kids Breakfast Menu",
+        "total": 1450
+      },
+      {
+        "cat": "Salads",
+        "total": 1151
+      },
+      {
+        "cat": "Cognac/Brandy",
+        "total": 872
+      },
+      {
+        "cat": "Iced Latte",
+        "total": 812.5
+      },
+      {
+        "cat": "Beer & Micheladas",
+        "total": 715
+      },
+      {
+        "cat": "Vodka",
+        "total": 712
+      },
+      {
+        "cat": "HH Food",
+        "total": 704
+      },
+      {
+        "cat": "HH Drinks",
+        "total": 647
+      },
+      {
+        "cat": " Specials",
+        "total": 531
+      },
+      {
+        "cat": "Bubbly/Wine/Sangria",
+        "total": 492
+      },
+      {
+        "cat": "Other",
+        "total": 373.88
+      },
+      {
+        "cat": "Agave Cocktails",
+        "total": 321
+      },
+      {
+        "cat": "Dessert",
+        "total": 214
+      },
+      {
+        "cat": "Whiskey/Scotch",
+        "total": 175
+      },
+      {
+        "cat": "Kids Lunch Menu ",
+        "total": 166
+      },
+      {
+        "cat": "Classic Cocktails",
+        "total": 164
+      },
+      {
+        "cat": "Shots",
+        "total": 81
+      },
+      {
+        "cat": "Liqueurs/Cordials",
+        "total": 48
+      },
+      {
+        "cat": "Rum",
+        "total": 38
+      },
+      {
+        "cat": "Gin",
+        "total": 7
+      }
+    ]
+  },
+  "detailData": {
+    "Toast Brea": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1213.2500000000002,
+        3443.980000000001,
+        10260.059999999994,
+        13315.80000000001,
+        15812.910000000002,
+        12997.169999999998,
+        5740.710000000002,
+        3139.87,
+        1228.6499999999999,
+        992.6500000000001,
+        2059.9299999999994,
+        1918.77,
+        1141.12,
+        862.01,
+        15.09,
+        0
+      ],
+      "tenderTotals": {
+        "Debit Card": 27464.969999999994,
+        "Cash": 5808.879999999997,
+        "Credit Card": 40816.39999999996,
+        "Gift Cards": 51.72
+      },
+      "orderTypeTotals": {
+        "Dine In": 74141.97
+      },
+      "totalTips": 9927.529999999999,
+      "totalTax": 5274.989999999999,
+      "totalAmount": 74141.97000000004,
+      "totalPayments": 1105
+    },
+    "Little Toast": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        627.93,
+        2132.6300000000006,
+        3961.11,
+        3648.5999999999995,
+        3995.6600000000008,
+        2343.5400000000004,
+        762.47,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tenderTotals": {
+        "Debit Card": 9242.589999999997,
+        "Credit Card": 6250.210000000001,
+        "Cash": 1929.1400000000003,
+        "Gift Cards": 50
+      },
+      "orderTypeTotals": {
+        "Dine In": 17471.939999999988
+      },
+      "totalTips": 1969.6399999999996,
+      "totalTax": 1631.2000000000003,
+      "totalAmount": 17471.93999999999,
+      "totalPayments": 290
+    },
+    "Benny and Mary's": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        539.41,
+        993.7199999999999,
+        3637.78,
+        5114.879999999999,
+        7481.2300000000005,
+        1675.0700000000002,
+        593.1700000000001,
+        2253.0999999999995,
+        3550.6199999999994,
+        6898.759999999999,
+        14530.96,
+        2524.2000000000003,
+        1535.42,
+        0
+      ],
+      "tenderTotals": {
+        "Credit Card": 40418.25999999999,
+        "Debit Card": 7790.459999999995,
+        "Cash": 1337.7100000000003,
+        "Uber Eats": 109.91,
+        "OLD GIFT CARDS": 307.06,
+        "Gift Cards": 171.54,
+        "Event Deposit": 1137.35,
+        "RICHARD REISMANN SPENDING": 56.03
+      },
+      "orderTypeTotals": {
+        "Dine In": 51187.66
+      },
+      "totalTips": 6281.550000000005,
+      "totalTax": 3413.4900000000002,
+      "totalAmount": 51328.32000000001,
+      "totalPayments": 475
+    },
+    "The Benediction": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        758.6600000000001,
+        2437.32,
+        4896.04,
+        4330.6799999999985,
+        5426.210000000001,
+        5289.750000000001,
+        2590.8699999999994,
+        811.2500000000001,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tenderTotals": {
+        "Debit Card": 10328.749999999996,
+        "Credit Card": 14979.939999999993,
+        "Cash": 1232.09
+      },
+      "orderTypeTotals": {
+        "Dine In": 26395.80000000001,
+        "To Go": 144.98
+      },
+      "totalTips": 2879.4699999999993,
+      "totalTax": 2374.05,
+      "totalAmount": 26540.780000000006,
+      "totalPayments": 358
+    },
+    "Story Whittier": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        28.73,
+        232.32000000000002,
+        4035.9499999999994,
+        6030.53,
+        8177.16,
+        10568.93,
+        6141.679999999999,
+        3484.519999999999,
+        1236.8,
+        1530.36,
+        687.3400000000001,
+        3034.1600000000003,
+        6303.16,
+        2346.6800000000003,
+        166.86,
+        0
+      ],
+      "tenderTotals": {
+        "Credit Card": 25494.419999999995,
+        "Cash": 5007.15,
+        "Debit Card": 23503.60999999999
+      },
+      "orderTypeTotals": {
+        "Dine In": 53798.53999999998
+      },
+      "totalTips": 6140.770000000003,
+      "totalTax": 4994.220000000004,
+      "totalAmount": 54005.17999999997,
+      "totalPayments": 616
+    },
+    "Toast Downey": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        125.71000000000001,
+        2189.9100000000003,
+        7668.690000000004,
+        16307.420000000004,
+        17225.799999999992,
+        17637.230000000007,
+        14755.059999999996,
+        8310.899999999998,
+        7131.470000000002,
+        9217.87,
+        5206.179999999999,
+        4216,
+        7825.170000000002,
+        2670.2799999999997,
+        0,
+        0
+      ],
+      "tenderTotals": {
+        "Credit Card": 35947.78999999998,
+        "Cash": 18349.020000000015,
+        "Debit Card": 66190.88000000003
+      },
+      "orderTypeTotals": {
+        "Dine In": 120483.41000000002
+      },
+      "totalTips": 7081.110000000007,
+      "totalTax": 10878.25000000001,
+      "totalAmount": 120487.68999999999,
+      "totalPayments": 1250
+    },
+    "Story Anaheim": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        174.55,
+        783.35,
+        3662.9599999999987,
+        6946.169999999999,
+        15093.070000000002,
+        8807.53000000001,
+        5608.839999999998,
+        5252.8399999999965,
+        5256.269999999998,
+        9056.09,
+        14605.079999999993,
+        15961.650000000001,
+        9591.730000000001,
+        1406.2400000000002,
+        20.47
+      ],
+      "tenderTotals": {
+        "Cash": 7109.350000000002,
+        "Credit Card": 65840.93999999996,
+        "Debit Card": 29000.770000000004,
+        "Gift Cards": 275.78
+      },
+      "orderTypeTotals": {
+        "Dine In": 102086.83999999972
+      },
+      "totalTips": 15782.000000000005,
+      "totalTax": 7264.5300000000025,
+      "totalAmount": 102226.8399999998,
+      "totalPayments": 1166
+    }
+  },
+  "orderStats": {
+    "Toast Brea": {
+      "totalOrders": 975,
+      "avgTicket": 64.06769230769231,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 51637.5
+        },
+        {
+          "tag": "Brunch",
+          "total": 44453.5
+        },
+        {
+          "tag": "Bar",
+          "total": 7578
+        },
+        {
+          "tag": "Liquor",
+          "total": 6151
+        },
+        {
+          "tag": "Lunch",
+          "total": 5135
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 3280
+        },
+        {
+          "tag": "Wine",
+          "total": 2285
+        },
+        {
+          "tag": "Barista",
+          "total": 1916.5
+        },
+        {
+          "tag": "Dinner",
+          "total": 1694
+        },
+        {
+          "tag": "Beer",
+          "total": 834
+        },
+        {
+          "tag": "Dessert",
+          "total": 507
+        }
+      ]
+    },
+    "Little Toast": {
+      "totalOrders": 269,
+      "avgTicket": 45.723977695167285,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 12069.5
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 229.5
+        },
+        {
+          "tag": "Barista",
+          "total": 229.5
+        }
+      ]
+    },
+    "Benny and Mary's": {
+      "totalOrders": 408,
+      "avgTicket": 108.39931372549019,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 22281
+        },
+        {
+          "tag": "Inside Expo",
+          "total": 21595.45
+        },
+        {
+          "tag": "Liquor",
+          "total": 7587
+        },
+        {
+          "tag": "Wine",
+          "total": 7387
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 3515.75
+        },
+        {
+          "tag": "Beer",
+          "total": 2983
+        },
+        {
+          "tag": "Dessert",
+          "total": 1739
+        },
+        {
+          "tag": "Barista",
+          "total": 404.5
+        }
+      ]
+    },
+    "Story Whittier": {
+      "totalOrders": 511,
+      "avgTicket": 92.0146771037182,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 25243.25
+        },
+        {
+          "tag": "Liquor",
+          "total": 11602
+        },
+        {
+          "tag": "Bar",
+          "total": 8756
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 5775
+        },
+        {
+          "tag": "alcohol",
+          "total": 5056
+        },
+        {
+          "tag": "wine",
+          "total": 2651
+        },
+        {
+          "tag": "Barista",
+          "total": 2525.25
+        },
+        {
+          "tag": "Beer",
+          "total": 710
+        },
+        {
+          "tag": "non alcoholic",
+          "total": 335
+        }
+      ]
+    },
+    "The Benediction": {
+      "totalOrders": 338,
+      "avgTicket": 60.17603550295858,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 18146.5
+        },
+        {
+          "tag": "FOOD",
+          "total": 18110.5
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 1294.5
+        },
+        {
+          "tag": "NON ALCOHOLIC",
+          "total": 1287.25
+        },
+        {
+          "tag": "Bar",
+          "total": 1123
+        },
+        {
+          "tag": "Bar 2",
+          "total": 1122
+        },
+        {
+          "tag": "ALCOHOL",
+          "total": 902.25
+        },
+        {
+          "tag": "Liquor",
+          "total": 895
+        },
+        {
+          "tag": "BEER",
+          "total": 0
+        },
+        {
+          "tag": "Beer",
+          "total": 0
+        }
+      ]
+    },
+    "Story Anaheim": {
+      "totalOrders": 989,
+      "avgTicket": 94.85995955510617,
+      "tagSales": [
+        {
+          "tag": "Food Sales",
+          "total": 116694.5
+        },
+        {
+          "tag": "S5 Mains/Pasta",
+          "total": 36970
+        },
+        {
+          "tag": "S3 Apps",
+          "total": 24925
+        },
+        {
+          "tag": "Bar Printer",
+          "total": 24463
+        },
+        {
+          "tag": "S1 Pizza/Salad",
+          "total": 22874
+        },
+        {
+          "tag": "Bar1",
+          "total": 22812
+        },
+        {
+          "tag": "Liquor, Beer, WBTG",
+          "total": 22393
+        },
+        {
+          "tag": "S1 Pizza/ Salad",
+          "total": 22167
+        },
+        {
+          "tag": "S5 Mains/pasta",
+          "total": 20738
+        },
+        {
+          "tag": "Liquor, Beer, & WBTG",
+          "total": 20376
+        },
+        {
+          "tag": "MEAT",
+          "total": 16815
+        },
+        {
+          "tag": "Tea Time Sales",
+          "total": 15504
+        },
+        {
+          "tag": "S2 Burger/Sandwich",
+          "total": 7904
+        },
+        {
+          "tag": "SEAFOOD",
+          "total": 7663.98
+        },
+        {
+          "tag": "POULTRY",
+          "total": 6962
+        },
+        {
+          "tag": "S6 Brunch",
+          "total": 5284.5
+        },
+        {
+          "tag": "Non-Alcoholic Drinks",
+          "total": 2613
+        },
+        {
+          "tag": "Desserts",
+          "total": 2410
+        },
+        {
+          "tag": "Desert",
+          "total": 2392.5
+        },
+        {
+          "tag": "S2 Burger/ Sandwich",
+          "total": 1582
+        },
+        {
+          "tag": "Wines By the Bottle",
+          "total": 1291
+        },
+        {
+          "tag": "Wines By The Bottle",
+          "total": 1291
+        },
+        {
+          "tag": "S2 Burgers/",
+          "total": 524
+        }
+      ]
+    },
+    "Toast Downey": {
+      "totalOrders": 1111,
+      "avgTicket": 90.46523852385239,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 68252
+        },
+        {
+          "tag": "meat",
+          "total": 36460
+        },
+        {
+          "tag": "Bar 1",
+          "total": 28457.25
+        },
+        {
+          "tag": "Bar 2",
+          "total": 28457.25
+        },
+        {
+          "tag": "Liquor",
+          "total": 16012.5
+        },
+        {
+          "tag": "BAR Inventory",
+          "total": 15381.5
+        },
+        {
+          "tag": "Wine",
+          "total": 8202
+        },
+        {
+          "tag": "POULTRY",
+          "total": 7293
+        },
+        {
+          "tag": "Non-Alcoholic Beverages",
+          "total": 6734.25
+        },
+        {
+          "tag": "Beer",
+          "total": 15
+        }
+      ]
+    }
+  }
+}
