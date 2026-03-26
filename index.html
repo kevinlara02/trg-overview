@@ -1,0 +1,3859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TRG Overview</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f2f5;color:#1a1a2e;min-height:100vh}.header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);color:white;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.3)}.header h1{font-size:20px;font-weight:700;letter-spacing:0.5px}.header-right{display:flex;align-items:center;gap:16px;font-size:13px;opacity:0.85}.sync-btn{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;padding:6px 14px;border-radius:20px;cursor:pointer;font-size:12px;transition:all 0.2s}.sync-btn:hover{background:rgba(255,255,255,0.25)}.tabs{background:white;border-bottom:2px solid #e8ecf0;padding:0 24px;display:flex;gap:0;position:sticky;top:60px;z-index:99;box-shadow:0 2px 4px rgba(0,0,0,0.05)}.tab{padding:14px 20px;cursor:pointer;font-size:13px;font-weight:500;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.2s;white-space:nowrap}.tab:hover{color:#1a1a2e;background:#f8f9fa}.tab.active{color:#1a1a2e;border-bottom-color:#3f3267;font-weight:700}.content{padding:24px;max-width:1400px;margin:0 auto}.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}.kpi-card{background:white;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid #3f3267}.kpi-card .label{font-size:12px;color:#888;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}.kpi-card .value{font-size:28px;font-weight:700;color:#1a1a2e}.kpi-card .sub{font-size:12px;color:#28a745;margin-top:4px;font-weight:500}.card{background:white;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:20px}.card h3{font-size:15px;font-weight:700;color:#1a1a2e;margin-bottom:16px;display:flex;align-items:center;gap:8px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}.restaurant-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px}.rest-card{background:white;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-top:4px solid #ddd;transition:transform 0.2s}.rest-card:hover{transform:translateY(-2px)}.rest-card .rest-name{font-size:14px;font-weight:700;color:#1a1a2e;margin-bottom:12px}.rest-card .rest-total{font-size:24px;font-weight:800;color:#1a1a2e;margin-bottom:4px}.rest-card .rest-today{font-size:12px;color:#666;margin-bottom:12px}.rest-card .rest-bar-bg{background:#f0f2f5;border-radius:4px;height:6px;overflow:hidden}.rest-card .rest-bar-fill{height:100%;border-radius:4px;transition:width 0.8s ease}.table-wrap{overflow-x:auto}.table-wrap table{width:100%;border-collapse:collapse;font-size:13px}.table-wrap th{background:#f8f9fa;padding:10px 12px;text-align:left;font-weight:600;color:#555;border-bottom:2px solid #e8ecf0;white-space:nowrap}.table-wrap td{padding:10px 12px;border-bottom:1px solid #f0f2f5;color:#333}.table-wrap tr:hover td{background:#fafbfc}.filter-bar{display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;align-items:center}.filter-bar select,.filter-bar input{padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;background:white;color:#333;outline:none}.filter-bar select:focus,.filter-bar input:focus{border-color:#3f3267}.badge{display:inline-block;padding:3px 8px;border-radius:12px;font-size:11px;font-weight:600}.badge-green{background:#e6f7ed;color:#28a745}.badge-red{background:#fde8e8;color:#dc3545}.badge-blue{background:#e8f0fe;color:#1a73e8}.section-title{font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:16px}.hidden{display:none}.expense-form{background:#f8f9fa;border-radius:10px;padding:16px;margin-bottom:16px}.expense-form .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:12px}.expense-form input,.expense-form select{width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none}.expense-form input:focus,.expense-form select:focus{border-color:#3f3267}.btn{padding:8px 16px;border:none;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;transition:all 0.2s}.btn-primary{background:#3f3267;color:white}.btn-primary:hover{background:#2d2450}.btn-success{background:#28a745;color:white}.btn-success:hover{background:#218838}.btn-secondary{background:#6c757d;color:white}.chart-container{position:relative;height:280px}.breakdown-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}.breakdown-card{background:white;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}.breakdown-card .bc-header{font-size:14px;font-weight:700;padding-bottom:10px;margin-bottom:10px;border-bottom:2px solid;}.breakdown-card .bc-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px solid #f5f5f5}.breakdown-card .bc-row.total{font-weight:700;font-size:14px;margin-top:4px;border-top:2px solid #333;border-bottom:none}.breakdown-card .bc-row .neg{color:#dc3545}.config-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}.config-card{background:white;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-left:4px solid #ddd}.config-card .cfg-name{font-size:15px;font-weight:700;margin-bottom:8px}.config-card .cfg-row{display:flex;justify-content:space-between;font-size:12px;color:#666;margin-bottom:4px}.cfg-token{font-family:monospace;font-size:11px;color:#888;background:#f5f5f5;padding:4px 8px;border-radius:4px;margin-top:8px;word-break:break-all}.refresh-btn{background:#3f3267;color:white;border:none;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px;float:right}
+
+      @keyframes claude-pulse {
+        0% {
+          box-shadow: 
+            inset 0 0 10px rgba(217, 119, 87, 0.5),
+            inset 0 0 20px rgba(217, 119, 87, 0.3),
+            inset 0 0 30px rgba(217, 119, 87, 0.1);
+        }
+        50% {
+          box-shadow: 
+            inset 0 0 15px rgba(217, 119, 87, 0.7),
+            inset 0 0 25px rgba(217, 119, 87, 0.5),
+            inset 0 0 35px rgba(217, 119, 87, 0.2);
+        }
+        100% {
+          box-shadow: 
+            inset 0 0 10px rgba(217, 119, 87, 0.5),
+            inset 0 0 20px rgba(217, 119, 87, 0.3),
+            inset 0 0 30px rgba(217, 119, 87, 0.1);
+        }
+      }
+    
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+// ============================================================
+// TRG OVERVIEW DASHBOARD — Auto-generated 26/3/2026
+// ============================================================
+
+// --- Embedded Data (fetched from Clover API) ---
+const EMBEDDED_DATA = {
+  "restaurants": [
+    {
+      "name": "Toast Brea",
+      "merchantId": "Y6VPGW62AZ551",
+      "color": "#3f3267",
+      "token": "a9e1e120-a131-81a8-a2fc-f4a4c753fa82"
+    },
+    {
+      "name": "Story Whittier",
+      "merchantId": "1T98P9RX1GJ91",
+      "color": "#2f7d88",
+      "token": "1f39eb6f-e46e-7a07-aae7-845eccb9df88"
+    },
+    {
+      "name": "Benny and Mary's",
+      "merchantId": "GHQ19WN06XY51",
+      "color": "#b6904e",
+      "token": "74b3b744-30de-1cc4-e96f-89a91309fe6f"
+    },
+    {
+      "name": "The Benediction",
+      "merchantId": "CSRYW9BYGBBX1",
+      "color": "#a8a8a8",
+      "token": "c5437709-78db-0f45-9acd-0a20bae95be9"
+    },
+    {
+      "name": "Story Anaheim",
+      "merchantId": "5VYJTMSVMSSF1",
+      "color": "#9d231e",
+      "token": "f4a00407-85f3-d2a1-7997-ca9497862eb0"
+    },
+    {
+      "name": "Toast Downey",
+      "merchantId": "HC6YRQCVV95K1",
+      "color": "#dba6a4",
+      "token": "532395f3-5396-f360-632d-de475188e934"
+    },
+    {
+      "name": "Little Toast",
+      "merchantId": "V3SEBWCSE6SW1",
+      "color": "#e09050",
+      "token": "2b0fdba9-d8de-e77c-98b9-eb20626556db"
+    }
+  ],
+  "colorMap": {
+    "Toast Brea": "#3f3267",
+    "Story Whittier": "#2f7d88",
+    "Benny and Mary's": "#b6904e",
+    "The Benediction": "#a8a8a8",
+    "Story Anaheim": "#9d231e",
+    "Toast Downey": "#dba6a4",
+    "Little Toast": "#e09050"
+  },
+  "ingresosData": [
+    {
+      "date": "2026-03-20",
+      "restaurant": "Toast Brea",
+      "gross": 5424.71,
+      "discounts": 0,
+      "tax": 375.77,
+      "tips": 443.63,
+      "net": 5048.94
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Story Whittier",
+      "gross": 11775.79,
+      "discounts": 0,
+      "tax": 1107.49,
+      "tips": 1458.91,
+      "net": 10668.3
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Toast Brea",
+      "gross": 18590.94,
+      "discounts": 0,
+      "tax": 1324.67,
+      "tips": 2470.83,
+      "net": 17266.27
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Story Whittier",
+      "gross": 20538.82,
+      "discounts": 0,
+      "tax": 1889.08,
+      "tips": 2346.1,
+      "net": 18649.74
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Toast Brea",
+      "gross": 25843,
+      "discounts": 0,
+      "tax": 1837.42,
+      "tips": 3658.71,
+      "net": 24005.58
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Story Whittier",
+      "gross": 11612.97,
+      "discounts": 0,
+      "tax": 1087.83,
+      "tips": 1290.26,
+      "net": 10525.14
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Toast Brea",
+      "gross": 7420.38,
+      "discounts": 0,
+      "tax": 530.84,
+      "tips": 981.13,
+      "net": 6889.54
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Story Whittier",
+      "gross": 2869.45,
+      "discounts": 0,
+      "tax": 262.32,
+      "tips": 301.75,
+      "net": 2607.13
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Toast Brea",
+      "gross": 4937.08,
+      "discounts": 0,
+      "tax": 355.08,
+      "tips": 683,
+      "net": 4582
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Story Whittier",
+      "gross": 3337.74,
+      "discounts": 0,
+      "tax": 300.45,
+      "tips": 318.45,
+      "net": 3037.29
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Toast Brea",
+      "gross": 4117.7,
+      "discounts": 0,
+      "tax": 296.2,
+      "tips": 592.01,
+      "net": 3821.5
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Story Whittier",
+      "gross": 3870.41,
+      "discounts": 0,
+      "tax": 347.05,
+      "tips": 231.13,
+      "net": 3523.36
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Benny and Mary's",
+      "gross": 7465.21,
+      "discounts": 0,
+      "tax": 513.27,
+      "tips": 1318.97,
+      "net": 6951.94
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Benny and Mary's",
+      "gross": 11399.2,
+      "discounts": 0,
+      "tax": 743.68,
+      "tips": 1212.36,
+      "net": 10655.52
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Benny and Mary's",
+      "gross": 7318.68,
+      "discounts": 0,
+      "tax": 501.04,
+      "tips": 1090,
+      "net": 6817.64
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Benny and Mary's",
+      "gross": 5596.54,
+      "discounts": 0,
+      "tax": 382.3,
+      "tips": 672.34,
+      "net": 5214.24
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Benny and Mary's",
+      "gross": 3762.77,
+      "discounts": 0,
+      "tax": 263.82,
+      "tips": 592.31,
+      "net": 3498.95
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Benny and Mary's",
+      "gross": 15379.71,
+      "discounts": 0,
+      "tax": 980.17,
+      "tips": 1303.84,
+      "net": 14399.54
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "The Benediction",
+      "gross": 3162.3,
+      "discounts": 0,
+      "tax": 282.3,
+      "tips": 329.07,
+      "net": 2880
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "The Benediction",
+      "gross": 7403.08,
+      "discounts": 0,
+      "tax": 656.61,
+      "tips": 783.57,
+      "net": 6746.47
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "The Benediction",
+      "gross": 10059,
+      "discounts": 0,
+      "tax": 899.69,
+      "tips": 1137.54,
+      "net": 9159.31
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "The Benediction",
+      "gross": 1910.2,
+      "discounts": 0,
+      "tax": 174.65,
+      "tips": 256.39,
+      "net": 1735.55
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "The Benediction",
+      "gross": 1692.59,
+      "discounts": 0,
+      "tax": 154.24,
+      "tips": 175.54,
+      "net": 1538.35
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "The Benediction",
+      "gross": 2313.61,
+      "discounts": 0,
+      "tax": 206.56,
+      "tips": 197.36,
+      "net": 2107.05
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Story Anaheim",
+      "gross": 18339.62,
+      "discounts": 0,
+      "tax": 1282.63,
+      "tips": 2614.53,
+      "net": 17056.99
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Story Anaheim",
+      "gross": 30318.05,
+      "discounts": 0,
+      "tax": 2154.4,
+      "tips": 4318.71,
+      "net": 28163.65
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Story Anaheim",
+      "gross": 21578.91,
+      "discounts": 0,
+      "tax": 1548.85,
+      "tips": 3388.68,
+      "net": 20030.06
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Story Anaheim",
+      "gross": 8744.43,
+      "discounts": 0,
+      "tax": 620.08,
+      "tips": 1448.86,
+      "net": 8124.35
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Story Anaheim",
+      "gross": 11620.82,
+      "discounts": 0,
+      "tax": 828.01,
+      "tips": 2132.32,
+      "net": 10792.81
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Story Anaheim",
+      "gross": 11610.46,
+      "discounts": 0,
+      "tax": 829.51,
+      "tips": 1444.17,
+      "net": 10780.95
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Toast Downey",
+      "gross": 14096.65,
+      "discounts": 0,
+      "tax": 1297.68,
+      "tips": 1060.68,
+      "net": 12798.97
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Toast Downey",
+      "gross": 46157.79,
+      "discounts": 0,
+      "tax": 4021.66,
+      "tips": 1895.28,
+      "net": 42136.13
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Toast Downey",
+      "gross": 32544.14,
+      "discounts": 0,
+      "tax": 2977.19,
+      "tips": 2028.56,
+      "net": 29566.95
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Toast Downey",
+      "gross": 10465.48,
+      "discounts": 0,
+      "tax": 980.41,
+      "tips": 667.52,
+      "net": 9485.07
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Toast Downey",
+      "gross": 8381.17,
+      "discounts": 0,
+      "tax": 769.2,
+      "tips": 632.62,
+      "net": 7611.97
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Toast Downey",
+      "gross": 8842.46,
+      "discounts": 0,
+      "tax": 832.11,
+      "tips": 796.45,
+      "net": 8010.35
+    },
+    {
+      "date": "2026-03-20",
+      "restaurant": "Little Toast",
+      "gross": 2090.78,
+      "discounts": 0,
+      "tax": 192.31,
+      "tips": 192.44,
+      "net": 1898.47
+    },
+    {
+      "date": "2026-03-21",
+      "restaurant": "Little Toast",
+      "gross": 4478.48,
+      "discounts": 0,
+      "tax": 416.9,
+      "tips": 517.56,
+      "net": 4061.58
+    },
+    {
+      "date": "2026-03-22",
+      "restaurant": "Little Toast",
+      "gross": 6772.03,
+      "discounts": 0,
+      "tax": 631.72,
+      "tips": 805.06,
+      "net": 6140.31
+    },
+    {
+      "date": "2026-03-23",
+      "restaurant": "Little Toast",
+      "gross": 1416.81,
+      "discounts": 0,
+      "tax": 132.35,
+      "tips": 122.32,
+      "net": 1284.46
+    },
+    {
+      "date": "2026-03-24",
+      "restaurant": "Little Toast",
+      "gross": 1261.94,
+      "discounts": 0,
+      "tax": 119.94,
+      "tips": 137.85,
+      "net": 1142
+    },
+    {
+      "date": "2026-03-25",
+      "restaurant": "Little Toast",
+      "gross": 1451.9,
+      "discounts": 0,
+      "tax": 137.98,
+      "tips": 194.41,
+      "net": 1313.92
+    }
+  ],
+  "expenses": [],
+  "topItems": {
+    "Toast Brea": [
+      {
+        "name": "Simple Breakfast",
+        "total": 3971,
+        "count": 209
+      },
+      {
+        "name": "Chilaquiles",
+        "total": 2322,
+        "count": 129
+      },
+      {
+        "name": "Denver",
+        "total": 1672,
+        "count": 88
+      },
+      {
+        "name": "Perfect Avocado",
+        "total": 1566,
+        "count": 87
+      },
+      {
+        "name": "Coffee",
+        "total": 1504.5,
+        "count": 354
+      },
+      {
+        "name": "Country Fried Steak Breakfast",
+        "total": 1428,
+        "count": 51
+      },
+      {
+        "name": "Veggie",
+        "total": 1377,
+        "count": 81
+      },
+      {
+        "name": "Flatiron Steak & Eggs",
+        "total": 1326,
+        "count": 34
+      },
+      {
+        "name": "Short Rib Chilaquiles",
+        "total": 1326,
+        "count": 51
+      },
+      {
+        "name": "Spanish",
+        "total": 1292,
+        "count": 68
+      },
+      {
+        "name": "Steak Chilaquiles",
+        "total": 1248,
+        "count": 32
+      },
+      {
+        "name": "Cali",
+        "total": 1241,
+        "count": 73
+      },
+      {
+        "name": "Classic Benedict",
+        "total": 1216,
+        "count": 64
+      },
+      {
+        "name": "Bacon Burrito",
+        "total": 1180,
+        "count": 59
+      },
+      {
+        "name": "Salmon Cucumber",
+        "total": 1104,
+        "count": 48
+      }
+    ],
+    "Little Toast": [
+      {
+        "name": "Simple Breakfast",
+        "total": 1786,
+        "count": 94
+      },
+      {
+        "name": "Chimi",
+        "total": 700,
+        "count": 25
+      },
+      {
+        "name": "Spanish Omelette",
+        "total": 646,
+        "count": 34
+      },
+      {
+        "name": "Perfect Avocado",
+        "total": 594,
+        "count": 33
+      },
+      {
+        "name": "Denver Omelette",
+        "total": 589,
+        "count": 31
+      },
+      {
+        "name": "Steak Breakfast",
+        "total": 585,
+        "count": 15
+      },
+      {
+        "name": "House Benny",
+        "total": 528,
+        "count": 24
+      },
+      {
+        "name": "Bacon Avo Benny",
+        "total": 506,
+        "count": 23
+      },
+      {
+        "name": "SantaBarb Benny",
+        "total": 400,
+        "count": 16
+      },
+      {
+        "name": "Pancake",
+        "total": 352,
+        "count": 32
+      },
+      {
+        "name": "Bacon Up",
+        "total": 324,
+        "count": 18
+      },
+      {
+        "name": "Cheesecake Full",
+        "total": 323,
+        "count": 17
+      },
+      {
+        "name": "Waffle",
+        "total": 319,
+        "count": 29
+      },
+      {
+        "name": "Veggie Omelet",
+        "total": 306,
+        "count": 18
+      },
+      {
+        "name": "Classic Benny",
+        "total": 304,
+        "count": 16
+      }
+    ],
+    "Benny and Mary's": [
+      {
+        "name": "Custom Item",
+        "total": 1350.56,
+        "count": 53
+      },
+      {
+        "name": "Tomahawk",
+        "total": 1200,
+        "count": 6
+      },
+      {
+        "name": "Chilean Sea Bass",
+        "total": 1078,
+        "count": 22
+      },
+      {
+        "name": "Ribeye SANDWICH",
+        "total": 897,
+        "count": 39
+      },
+      {
+        "name": "Cheese Dumplings",
+        "total": 896,
+        "count": 56
+      },
+      {
+        "name": "Yellowfin Bowl",
+        "total": 882,
+        "count": 42
+      },
+      {
+        "name": "Chicken Med Bowl",
+        "total": 880,
+        "count": 44
+      },
+      {
+        "name": "Ribeye Entree",
+        "total": 833,
+        "count": 17
+      },
+      {
+        "name": "Short Rib Entree",
+        "total": 782,
+        "count": 23
+      },
+      {
+        "name": "Caesar",
+        "total": 750,
+        "count": 50
+      },
+      {
+        "name": "Salmon Entree",
+        "total": 741,
+        "count": 19
+      },
+      {
+        "name": "STROGANOFF",
+        "total": 725,
+        "count": 25
+      },
+      {
+        "name": "Adult Green Juice",
+        "total": 672,
+        "count": 42
+      },
+      {
+        "name": "El Diablo Smash",
+        "total": 672,
+        "count": 42
+      },
+      {
+        "name": "Chicken Piccata",
+        "total": 667,
+        "count": 29
+      }
+    ],
+    "Story Whittier": [
+      {
+        "name": "Tea Experience",
+        "total": 5440,
+        "count": 136
+      },
+      {
+        "name": "Steak Chilaquiles",
+        "total": 1443,
+        "count": 37
+      },
+      {
+        "name": "Short Rib Chilaquiles",
+        "total": 1430,
+        "count": 55
+      },
+      {
+        "name": "Chilaquiles",
+        "total": 1314,
+        "count": 73
+      },
+      {
+        "name": "D-Prefix",
+        "total": 1305,
+        "count": 29
+      },
+      {
+        "name": "Simple Breakfast",
+        "total": 1178,
+        "count": 62
+      },
+      {
+        "name": "Pork Chilaquiles",
+        "total": 1008,
+        "count": 42
+      },
+      {
+        "name": "Mimosa Flight ",
+        "total": 1008,
+        "count": 28
+      },
+      {
+        "name": "Steak Breakfast",
+        "total": 975,
+        "count": 25
+      },
+      {
+        "name": "Breakfast Burrito",
+        "total": 880,
+        "count": 44
+      },
+      {
+        "name": "Perfect Avocado Toast",
+        "total": 828,
+        "count": 46
+      },
+      {
+        "name": "Chicken & Waffles",
+        "total": 740,
+        "count": 37
+      },
+      {
+        "name": "Short Rib Enchiladas",
+        "total": 650,
+        "count": 25
+      },
+      {
+        "name": "Coffee",
+        "total": 612,
+        "count": 144
+      },
+      {
+        "name": "Flavored Latte",
+        "total": 591.5,
+        "count": 91
+      }
+    ],
+    "The Benediction": [
+      {
+        "name": "Simple Breakfast",
+        "total": 1615,
+        "count": 85
+      },
+      {
+        "name": "Steak & Eggs",
+        "total": 1248,
+        "count": 32
+      },
+      {
+        "name": "Santa Barb Benny",
+        "total": 1200,
+        "count": 48
+      },
+      {
+        "name": "Denver",
+        "total": 798,
+        "count": 42
+      },
+      {
+        "name": "Class Benny",
+        "total": 760,
+        "count": 40
+      },
+      {
+        "name": "Bac Avo Benny",
+        "total": 748,
+        "count": 34
+      },
+      {
+        "name": "Chicken & Waffle",
+        "total": 660,
+        "count": 33
+      },
+      {
+        "name": "Steak & Chilaquiles",
+        "total": 616,
+        "count": 22
+      },
+      {
+        "name": "Ribeye & Eggs",
+        "total": 540,
+        "count": 12
+      },
+      {
+        "name": "Spanish",
+        "total": 532,
+        "count": 28
+      },
+      {
+        "name": "Coffee",
+        "total": 514.25,
+        "count": 121
+      },
+      {
+        "name": "Perfect Avo",
+        "total": 504,
+        "count": 28
+      },
+      {
+        "name": "Veggie",
+        "total": 493,
+        "count": 29
+      },
+      {
+        "name": "Mexican Mocha",
+        "total": 468,
+        "count": 72
+      },
+      {
+        "name": "Classic Smash",
+        "total": 468,
+        "count": 26
+      }
+    ],
+    "Story Anaheim": [
+      {
+        "name": "Tea Experience Mad Hatter",
+        "total": 15504,
+        "count": 456
+      },
+      {
+        "name": "Chicken Piccata",
+        "total": 3588,
+        "count": 138
+      },
+      {
+        "name": "Short Rib Pasta",
+        "total": 2828,
+        "count": 101
+      },
+      {
+        "name": "Chilean Sea Bass Entree",
+        "total": 2400,
+        "count": 40
+      },
+      {
+        "name": "Braised Short Rib",
+        "total": 2176,
+        "count": 64
+      },
+      {
+        "name": "Wycliff (Tea Experience)",
+        "total": 1794,
+        "count": 299
+      },
+      {
+        "name": "Yuzu Lobster Pasta",
+        "total": 1634,
+        "count": 43
+      },
+      {
+        "name": "Classic Smashburger",
+        "total": 1387,
+        "count": 73
+      },
+      {
+        "name": "Short Rib Grilled Cheese",
+        "total": 1344,
+        "count": 64
+      },
+      {
+        "name": "Braised Short Rib Tacos",
+        "total": 1320,
+        "count": 66
+      },
+      {
+        "name": "Chicken Milanese",
+        "total": 1311,
+        "count": 57
+      },
+      {
+        "name": "Ribeye Steak",
+        "total": 1260,
+        "count": 21
+      },
+      {
+        "name": "HH Braised Short Rib Tacos",
+        "total": 1260,
+        "count": 84
+      },
+      {
+        "name": "Salmon Entree",
+        "total": 1254,
+        "count": 33
+      },
+      {
+        "name": "Steak Sandwich",
+        "total": 1176,
+        "count": 49
+      }
+    ],
+    "Toast Downey": [
+      {
+        "name": "Chilaquiles",
+        "total": 4752,
+        "count": 264
+      },
+      {
+        "name": "Bottomless",
+        "total": 4574,
+        "count": 268
+      },
+      {
+        "name": "Steak Chilaquiles",
+        "total": 3939,
+        "count": 101
+      },
+      {
+        "name": "Simple Breakfast",
+        "total": 3895,
+        "count": 205
+      },
+      {
+        "name": "Chicken & Waffles",
+        "total": 3340,
+        "count": 167
+      },
+      {
+        "name": "Steak & Eggs",
+        "total": 2730,
+        "count": 70
+      },
+      {
+        "name": "Barbacoa  Chilaquiles",
+        "total": 2340,
+        "count": 90
+      },
+      {
+        "name": "Pork Chilaquiles",
+        "total": 2136,
+        "count": 89
+      },
+      {
+        "name": "Classic French",
+        "total": 1989,
+        "count": 153
+      },
+      {
+        "name": "Mimosa Flight",
+        "total": 1872,
+        "count": 52
+      },
+      {
+        "name": "Mimosa Bottle",
+        "total": 1725,
+        "count": 69
+      },
+      {
+        "name": "Coffee",
+        "total": 1534.25,
+        "count": 361
+      },
+      {
+        "name": "Wings",
+        "total": 1515,
+        "count": 101
+      },
+      {
+        "name": "Margarita Flight",
+        "total": 1408,
+        "count": 44
+      },
+      {
+        "name": "Strawberry Cheesecake",
+        "total": 1387,
+        "count": 73
+      }
+    ]
+  },
+  "categoryData": {
+    "Toast Brea": [
+      {
+        "cat": "Classic Breakfast",
+        "total": 20383
+      },
+      {
+        "cat": "Griddle",
+        "total": 7630.5
+      },
+      {
+        "cat": "Benedicts",
+        "total": 5900
+      },
+      {
+        "cat": "Omelette",
+        "total": 4998
+      },
+      {
+        "cat": "Toast",
+        "total": 3911
+      },
+      {
+        "cat": "Server Drinks",
+        "total": 2256.75
+      },
+      {
+        "cat": "Brunch Cocktails",
+        "total": 2217
+      },
+      {
+        "cat": "Burger/Sandwich",
+        "total": 2044
+      },
+      {
+        "cat": "Apps",
+        "total": 1877
+      },
+      {
+        "cat": "Mimosas",
+        "total": 1804
+      },
+      {
+        "cat": "Main",
+        "total": 1661
+      },
+      {
+        "cat": "Barista",
+        "total": 958.25
+      },
+      {
+        "cat": "Kids",
+        "total": 951
+      },
+      {
+        "cat": "Tipsy Barista",
+        "total": 938
+      },
+      {
+        "cat": "Sides",
+        "total": 893.5
+      },
+      {
+        "cat": "Beer",
+        "total": 834
+      },
+      {
+        "cat": "Salad",
+        "total": 829
+      },
+      {
+        "cat": "Dinner Cocktails",
+        "total": 607
+      },
+      {
+        "cat": "Wine (Glass)",
+        "total": 434
+      },
+      {
+        "cat": "Dessert",
+        "total": 351
+      },
+      {
+        "cat": "Tequila",
+        "total": 320
+      },
+      {
+        "cat": "Vodka ",
+        "total": 317
+      },
+      {
+        "cat": "A La Carte",
+        "total": 312
+      },
+      {
+        "cat": "Flatbread",
+        "total": 296
+      },
+      {
+        "cat": "Bourbon/Whiskey",
+        "total": 108
+      },
+      {
+        "cat": "Wine (Bottle)",
+        "total": 76
+      },
+      {
+        "cat": "Bar Misc",
+        "total": 64
+      },
+      {
+        "cat": "Gin",
+        "total": 56
+      },
+      {
+        "cat": "Cordials",
+        "total": 21
+      },
+      {
+        "cat": "Rum",
+        "total": 20
+      },
+      {
+        "cat": "Other",
+        "total": 2
+      }
+    ],
+    "Little Toast": [
+      {
+        "cat": "Toasts",
+        "total": 2980
+      },
+      {
+        "cat": "Benedicts",
+        "total": 2457
+      },
+      {
+        "cat": "Classic Breakfast",
+        "total": 2371
+      },
+      {
+        "cat": "Omelletes",
+        "total": 1796
+      },
+      {
+        "cat": "French Toasts",
+        "total": 1209.5
+      },
+      {
+        "cat": "Pancakes & Waffles",
+        "total": 769
+      },
+      {
+        "cat": "Kids Meals",
+        "total": 357
+      },
+      {
+        "cat": "Drinks",
+        "total": 229.5
+      },
+      {
+        "cat": "Breakfast Sides",
+        "total": 130
+      },
+      {
+        "cat": "Other",
+        "total": 0.75
+      }
+    ],
+    "Benny and Mary's": [
+      {
+        "cat": "Main",
+        "total": 6840
+      },
+      {
+        "cat": "Apps",
+        "total": 4082
+      },
+      {
+        "cat": "Salads/Bowls",
+        "total": 3489
+      },
+      {
+        "cat": "Dinner Cocktails",
+        "total": 3461
+      },
+      {
+        "cat": "Burger/Sandwich",
+        "total": 3396
+      },
+      {
+        "cat": "Red Bottle",
+        "total": 2017
+      },
+      {
+        "cat": "Drinks",
+        "total": 1944.75
+      },
+      {
+        "cat": "Other",
+        "total": 1778.72
+      },
+      {
+        "cat": "Classic Breakfast",
+        "total": 1546
+      },
+      {
+        "cat": "BEO / PRIVATE EVENT",
+        "total": 1325
+      },
+      {
+        "cat": "Dessert",
+        "total": 1317.95
+      },
+      {
+        "cat": "Sparkling Bottle",
+        "total": 1314
+      },
+      {
+        "cat": "Happy Hour Drinks",
+        "total": 1239
+      },
+      {
+        "cat": "Happy Hour Food ",
+        "total": 1024
+      },
+      {
+        "cat": "Tequila",
+        "total": 841
+      },
+      {
+        "cat": "Brunch Cocktails",
+        "total": 840
+      },
+      {
+        "cat": "White Glass",
+        "total": 825
+      },
+      {
+        "cat": "Griddle",
+        "total": 812
+      },
+      {
+        "cat": "Beer",
+        "total": 745
+      },
+      {
+        "cat": "Bourbon/Whiskey",
+        "total": 741
+      },
+      {
+        "cat": "Benedicts",
+        "total": 655
+      },
+      {
+        "cat": "Vodka",
+        "total": 625
+      },
+      {
+        "cat": "Red Glass",
+        "total": 592
+      },
+      {
+        "cat": "Mimosas",
+        "total": 485
+      },
+      {
+        "cat": "White Bottle",
+        "total": 409
+      },
+      {
+        "cat": "Flatbread",
+        "total": 407
+      },
+      {
+        "cat": "Sides",
+        "total": 380.5
+      },
+      {
+        "cat": "A La Carte",
+        "total": 195
+      },
+      {
+        "cat": "Breakfast Bowl",
+        "total": 193
+      },
+      {
+        "cat": "Rose Glass",
+        "total": 146
+      },
+      {
+        "cat": "Toast",
+        "total": 129
+      },
+      {
+        "cat": "Rye",
+        "total": 122
+      },
+      {
+        "cat": "Catering",
+        "total": 112
+      },
+      {
+        "cat": "Gin",
+        "total": 94
+      },
+      {
+        "cat": "Brandy/Cognac",
+        "total": 80
+      },
+      {
+        "cat": "Cordials",
+        "total": 63
+      },
+      {
+        "cat": "Kids",
+        "total": 60
+      },
+      {
+        "cat": "Mezcal",
+        "total": 36
+      },
+      {
+        "cat": "Scotch",
+        "total": 34
+      },
+      {
+        "cat": "Rum",
+        "total": 24
+      }
+    ],
+    "Story Whittier": [
+      {
+        "cat": "SHAREABLES",
+        "total": 8806
+      },
+      {
+        "cat": "Bubbly",
+        "total": 6516
+      },
+      {
+        "cat": "THE CHILAQUILES ADVENTURE",
+        "total": 5330
+      },
+      {
+        "cat": "THE CLASSIC CHAPTER",
+        "total": 4527
+      },
+      {
+        "cat": "sTORy MAINS",
+        "total": 4002
+      },
+      {
+        "cat": "N/A Barista ",
+        "total": 2188.75
+      },
+      {
+        "cat": "THE BENEDICT BOOK",
+        "total": 1873
+      },
+      {
+        "cat": "PANCAKE & WAFFLE STORIES",
+        "total": 1815
+      },
+      {
+        "cat": "SCRAMBLES & SIDE QUESTS",
+        "total": 1742
+      },
+      {
+        "cat": "Happy Hour",
+        "total": 1729
+      },
+      {
+        "cat": "HANDHELD HEROS",
+        "total": 1565
+      },
+      {
+        "cat": "Bar Menu ",
+        "total": 1375
+      },
+      {
+        "cat": "Mimosas",
+        "total": 1338
+      },
+      {
+        "cat": "Banquet",
+        "total": 1305
+      },
+      {
+        "cat": "LARA DINNER 3/21/26",
+        "total": 1305
+      },
+      {
+        "cat": "Story Cocktails",
+        "total": 1170
+      },
+      {
+        "cat": "THE TOASTED TALES",
+        "total": 1151
+      },
+      {
+        "cat": "Other",
+        "total": 1130
+      },
+      {
+        "cat": "FRENCH TOAST CHRONICLES",
+        "total": 1060
+      },
+      {
+        "cat": "Backstory 85",
+        "total": 954
+      },
+      {
+        "cat": "House Cocktails",
+        "total": 944
+      },
+      {
+        "cat": "Soda & Juice",
+        "total": 747
+      },
+      {
+        "cat": "Brunch Cocktails",
+        "total": 679
+      },
+      {
+        "cat": "Breakfast Sides",
+        "total": 666.25
+      },
+      {
+        "cat": "Beer",
+        "total": 547
+      },
+      {
+        "cat": "KIDS BREAKFAST MENU",
+        "total": 514
+      },
+      {
+        "cat": "STORY DESSERTS",
+        "total": 451
+      },
+      {
+        "cat": "American Whiskey",
+        "total": 399
+      },
+      {
+        "cat": "Coffee Cocktails",
+        "total": 364
+      },
+      {
+        "cat": "Spirits Vodka",
+        "total": 351
+      },
+      {
+        "cat": "SALADS",
+        "total": 336
+      },
+      {
+        "cat": "Tequila & Mezcal",
+        "total": 326
+      },
+      {
+        "cat": "Well Spirits",
+        "total": 312
+      },
+      {
+        "cat": "Cordials/Liqueur",
+        "total": 253
+      },
+      {
+        "cat": "Wine By Glass",
+        "total": 251
+      },
+      {
+        "cat": "Wine Bottle",
+        "total": 222
+      },
+      {
+        "cat": "Margaritas",
+        "total": 204
+      },
+      {
+        "cat": "DINNER KIDS",
+        "total": 130
+      },
+      {
+        "cat": "Classic Cocktails",
+        "total": 70
+      },
+      {
+        "cat": "Non Alcoholic Low ABV",
+        "total": 63
+      },
+      {
+        "cat": "World Whiskey",
+        "total": 45
+      },
+      {
+        "cat": "Spirits Rum",
+        "total": 36
+      },
+      {
+        "cat": "Spirits Gin",
+        "total": 24
+      },
+      {
+        "cat": "Spirits Brandy & Cognac",
+        "total": 16
+      },
+      {
+        "cat": "Spirits Cordials",
+        "total": 9
+      },
+      {
+        "cat": "TOGO ORDER",
+        "total": 0
+      }
+    ],
+    "The Benediction": [
+      {
+        "cat": "Classics",
+        "total": 5472
+      },
+      {
+        "cat": "Eggs Benedict",
+        "total": 4183
+      },
+      {
+        "cat": "Omelette",
+        "total": 1993
+      },
+      {
+        "cat": "Toast",
+        "total": 1869
+      },
+      {
+        "cat": "Pancakes/Waffles",
+        "total": 1826
+      },
+      {
+        "cat": "Drinks",
+        "total": 1294.5
+      },
+      {
+        "cat": "Lunch",
+        "total": 1191
+      },
+      {
+        "cat": "French Toast",
+        "total": 1065.5
+      },
+      {
+        "cat": "Bar",
+        "total": 895
+      },
+      {
+        "cat": "Coffee",
+        "total": 514.25
+      },
+      {
+        "cat": "Kids",
+        "total": 322
+      },
+      {
+        "cat": "Sides",
+        "total": 213
+      },
+      {
+        "cat": "Desserts",
+        "total": 12
+      },
+      {
+        "cat": "Other",
+        "total": 3.5
+      }
+    ],
+    "Story Anaheim": [
+      {
+        "cat": "Tea Experience",
+        "total": 18126
+      },
+      {
+        "cat": "Main Entrees",
+        "total": 13093
+      },
+      {
+        "cat": "Appetizers ",
+        "total": 8347
+      },
+      {
+        "cat": "Pizza & Pasta ",
+        "total": 6740
+      },
+      {
+        "cat": "Sandwiches & Burgers",
+        "total": 5826
+      },
+      {
+        "cat": "House Cocktails",
+        "total": 5690
+      },
+      {
+        "cat": "HH Food",
+        "total": 4760
+      },
+      {
+        "cat": "Wines By The Glass",
+        "total": 3795
+      },
+      {
+        "cat": "Soups & Salads",
+        "total": 3638
+      },
+      {
+        "cat": "Brunch Classics",
+        "total": 3586
+      },
+      {
+        "cat": "HH Cocktails",
+        "total": 2750
+      },
+      {
+        "cat": "Desserts",
+        "total": 2410
+      },
+      {
+        "cat": "MM Food",
+        "total": 2278
+      },
+      {
+        "cat": "Drinks",
+        "total": 2055
+      },
+      {
+        "cat": "Vodka",
+        "total": 1869
+      },
+      {
+        "cat": "HH Craft Beers & Wine",
+        "total": 1395
+      },
+      {
+        "cat": "Sides",
+        "total": 1265
+      },
+      {
+        "cat": "Brunch Sweets ",
+        "total": 1235
+      },
+      {
+        "cat": "Bourbon/Irish/Can",
+        "total": 1231
+      },
+      {
+        "cat": "Liqueurs/Amaros/Apertif",
+        "total": 1078
+      },
+      {
+        "cat": "Wines By The Bottle",
+        "total": 1011
+      },
+      {
+        "cat": "Tequila",
+        "total": 994
+      },
+      {
+        "cat": "WW Bottles",
+        "total": 836
+      },
+      {
+        "cat": "Kids Menu",
+        "total": 762
+      },
+      {
+        "cat": "Draft Beer",
+        "total": 743
+      },
+      {
+        "cat": "Brunch Cocktails",
+        "total": 702
+      },
+      {
+        "cat": "Gin",
+        "total": 484
+      },
+      {
+        "cat": "Flights",
+        "total": 415
+      },
+      {
+        "cat": "HH Wells",
+        "total": 410
+      },
+      {
+        "cat": "Brunch Sides",
+        "total": 409.5
+      },
+      {
+        "cat": "TT Food",
+        "total": 296
+      },
+      {
+        "cat": "Rye",
+        "total": 226
+      },
+      {
+        "cat": "Bottled Beer",
+        "total": 171
+      },
+      {
+        "cat": "Mezcal",
+        "total": 139
+      },
+      {
+        "cat": "TT Cocktials",
+        "total": 126
+      },
+      {
+        "cat": "Scotch/Japanese ",
+        "total": 104
+      },
+      {
+        "cat": "WW Charcuterie Board",
+        "total": 90
+      },
+      {
+        "cat": "MM Cocktails",
+        "total": 81
+      },
+      {
+        "cat": "Rum",
+        "total": 50
+      },
+      {
+        "cat": "Other",
+        "total": 38
+      }
+    ],
+    "Toast Downey": [
+      {
+        "cat": "Breakfast Classics",
+        "total": 15228
+      },
+      {
+        "cat": "Chilaquiles",
+        "total": 13717
+      },
+      {
+        "cat": "Brunch & Tipsy Barista",
+        "total": 8204
+      },
+      {
+        "cat": "Mimosas & Bubbly",
+        "total": 7838.5
+      },
+      {
+        "cat": "Appetizers",
+        "total": 6411
+      },
+      {
+        "cat": "Pancakes & Waffles",
+        "total": 6012
+      },
+      {
+        "cat": "French Toast",
+        "total": 5501
+      },
+      {
+        "cat": "Margaritas",
+        "total": 5097
+      },
+      {
+        "cat": "Flights",
+        "total": 3920
+      },
+      {
+        "cat": "Burgers & Sandwiches",
+        "total": 3832
+      },
+      {
+        "cat": "Soda & Juice",
+        "total": 3748.5
+      },
+      {
+        "cat": "Mains ",
+        "total": 3458
+      },
+      {
+        "cat": "Omelette",
+        "total": 3210
+      },
+      {
+        "cat": "Benedict",
+        "total": 2666
+      },
+      {
+        "cat": "Toast",
+        "total": 2505
+      },
+      {
+        "cat": "Lemonades +",
+        "total": 2405.25
+      },
+      {
+        "cat": "Breakfast Sides",
+        "total": 1970
+      },
+      {
+        "cat": "Tequila/Mezcal",
+        "total": 1823
+      },
+      {
+        "cat": "House Cocktails",
+        "total": 1819
+      },
+      {
+        "cat": "Large Format Cocktails",
+        "total": 1680
+      },
+      {
+        "cat": "Kids Breakfast Menu",
+        "total": 1450
+      },
+      {
+        "cat": "Salads",
+        "total": 1151
+      },
+      {
+        "cat": "Cognac/Brandy",
+        "total": 872
+      },
+      {
+        "cat": "Iced Latte",
+        "total": 812.5
+      },
+      {
+        "cat": "Beer & Micheladas",
+        "total": 715
+      },
+      {
+        "cat": "Vodka",
+        "total": 712
+      },
+      {
+        "cat": "HH Food",
+        "total": 704
+      },
+      {
+        "cat": "HH Drinks",
+        "total": 647
+      },
+      {
+        "cat": " Specials",
+        "total": 531
+      },
+      {
+        "cat": "Bubbly/Wine/Sangria",
+        "total": 492
+      },
+      {
+        "cat": "Other",
+        "total": 373.88
+      },
+      {
+        "cat": "Agave Cocktails",
+        "total": 321
+      },
+      {
+        "cat": "Dessert",
+        "total": 214
+      },
+      {
+        "cat": "Whiskey/Scotch",
+        "total": 175
+      },
+      {
+        "cat": "Kids Lunch Menu ",
+        "total": 166
+      },
+      {
+        "cat": "Classic Cocktails",
+        "total": 164
+      },
+      {
+        "cat": "Shots",
+        "total": 81
+      },
+      {
+        "cat": "Liqueurs/Cordials",
+        "total": 48
+      },
+      {
+        "cat": "Rum",
+        "total": 38
+      },
+      {
+        "cat": "Gin",
+        "total": 7
+      }
+    ]
+  },
+  "detailData": {
+    "Toast Brea": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1213.2500000000002,
+        3443.980000000001,
+        10260.059999999994,
+        13315.80000000001,
+        15812.910000000002,
+        12997.169999999998,
+        5740.710000000002,
+        3139.87,
+        1228.6499999999999,
+        992.6500000000001,
+        2059.9299999999994,
+        1918.77,
+        1141.12,
+        862.01,
+        15.09,
+        0
+      ],
+      "tenderTotals": {
+        "Debit Card": 27464.969999999994,
+        "Cash": 5808.879999999997,
+        "Credit Card": 40816.39999999996,
+        "Gift Cards": 51.72
+      },
+      "orderTypeTotals": {
+        "Dine In": 74141.97
+      },
+      "totalTips": 9927.529999999999,
+      "totalTax": 5274.989999999999,
+      "totalAmount": 74141.97000000004,
+      "totalPayments": 1105
+    },
+    "Little Toast": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        627.93,
+        2132.6300000000006,
+        3961.11,
+        3648.5999999999995,
+        3995.6600000000008,
+        2343.5400000000004,
+        762.47,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tenderTotals": {
+        "Debit Card": 9242.589999999997,
+        "Credit Card": 6250.210000000001,
+        "Cash": 1929.1400000000003,
+        "Gift Cards": 50
+      },
+      "orderTypeTotals": {
+        "Dine In": 17471.939999999988
+      },
+      "totalTips": 1969.6399999999996,
+      "totalTax": 1631.2000000000003,
+      "totalAmount": 17471.93999999999,
+      "totalPayments": 290
+    },
+    "Benny and Mary's": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        539.41,
+        993.7199999999999,
+        3637.78,
+        5114.879999999999,
+        7481.2300000000005,
+        1675.0700000000002,
+        593.1700000000001,
+        2253.0999999999995,
+        3550.6199999999994,
+        6898.759999999999,
+        14530.96,
+        2524.2000000000003,
+        1535.42,
+        0
+      ],
+      "tenderTotals": {
+        "Credit Card": 40418.25999999999,
+        "Debit Card": 7790.459999999995,
+        "Cash": 1337.7100000000003,
+        "Uber Eats": 109.91,
+        "OLD GIFT CARDS": 307.06,
+        "Gift Cards": 171.54,
+        "Event Deposit": 1137.35,
+        "RICHARD REISMANN SPENDING": 56.03
+      },
+      "orderTypeTotals": {
+        "Dine In": 51187.66
+      },
+      "totalTips": 6281.550000000005,
+      "totalTax": 3413.4900000000002,
+      "totalAmount": 51328.32000000001,
+      "totalPayments": 475
+    },
+    "The Benediction": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        758.6600000000001,
+        2437.32,
+        4896.04,
+        4330.6799999999985,
+        5426.210000000001,
+        5289.750000000001,
+        2590.8699999999994,
+        811.2500000000001,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tenderTotals": {
+        "Debit Card": 10328.749999999996,
+        "Credit Card": 14979.939999999993,
+        "Cash": 1232.09
+      },
+      "orderTypeTotals": {
+        "Dine In": 26395.80000000001,
+        "To Go": 144.98
+      },
+      "totalTips": 2879.4699999999993,
+      "totalTax": 2374.05,
+      "totalAmount": 26540.780000000006,
+      "totalPayments": 358
+    },
+    "Story Whittier": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        28.73,
+        232.32000000000002,
+        4035.9499999999994,
+        6030.53,
+        8177.16,
+        10568.93,
+        6141.679999999999,
+        3484.519999999999,
+        1236.8,
+        1530.36,
+        687.3400000000001,
+        3034.1600000000003,
+        6303.16,
+        2346.6800000000003,
+        166.86,
+        0
+      ],
+      "tenderTotals": {
+        "Credit Card": 25494.419999999995,
+        "Cash": 5007.15,
+        "Debit Card": 23503.60999999999
+      },
+      "orderTypeTotals": {
+        "Dine In": 53798.53999999998
+      },
+      "totalTips": 6140.770000000003,
+      "totalTax": 4994.220000000004,
+      "totalAmount": 54005.17999999997,
+      "totalPayments": 616
+    },
+    "Toast Downey": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        125.71000000000001,
+        2189.9100000000003,
+        7668.690000000004,
+        16307.420000000004,
+        17225.799999999992,
+        17637.230000000007,
+        14755.059999999996,
+        8310.899999999998,
+        7131.470000000002,
+        9217.87,
+        5206.179999999999,
+        4216,
+        7825.170000000002,
+        2670.2799999999997,
+        0,
+        0
+      ],
+      "tenderTotals": {
+        "Credit Card": 35947.78999999998,
+        "Cash": 18349.020000000015,
+        "Debit Card": 66190.88000000003
+      },
+      "orderTypeTotals": {
+        "Dine In": 120483.41000000002
+      },
+      "totalTips": 7081.110000000007,
+      "totalTax": 10878.25000000001,
+      "totalAmount": 120487.68999999999,
+      "totalPayments": 1250
+    },
+    "Story Anaheim": {
+      "hourly": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        174.55,
+        783.35,
+        3662.9599999999987,
+        6946.169999999999,
+        15093.070000000002,
+        8807.53000000001,
+        5608.839999999998,
+        5252.8399999999965,
+        5256.269999999998,
+        9056.09,
+        14605.079999999993,
+        15961.650000000001,
+        9591.730000000001,
+        1406.2400000000002,
+        20.47
+      ],
+      "tenderTotals": {
+        "Cash": 7109.350000000002,
+        "Credit Card": 65840.93999999996,
+        "Debit Card": 29000.770000000004,
+        "Gift Cards": 275.78
+      },
+      "orderTypeTotals": {
+        "Dine In": 102086.83999999972
+      },
+      "totalTips": 15782.000000000005,
+      "totalTax": 7264.5300000000025,
+      "totalAmount": 102226.8399999998,
+      "totalPayments": 1166
+    }
+  },
+  "orderStats": {
+    "Toast Brea": {
+      "totalOrders": 975,
+      "avgTicket": 64.06769230769231,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 51637.5
+        },
+        {
+          "tag": "Brunch",
+          "total": 44453.5
+        },
+        {
+          "tag": "Bar",
+          "total": 7578
+        },
+        {
+          "tag": "Liquor",
+          "total": 6151
+        },
+        {
+          "tag": "Lunch",
+          "total": 5135
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 3280
+        },
+        {
+          "tag": "Wine",
+          "total": 2285
+        },
+        {
+          "tag": "Barista",
+          "total": 1916.5
+        },
+        {
+          "tag": "Dinner",
+          "total": 1694
+        },
+        {
+          "tag": "Beer",
+          "total": 834
+        },
+        {
+          "tag": "Dessert",
+          "total": 507
+        }
+      ]
+    },
+    "Little Toast": {
+      "totalOrders": 269,
+      "avgTicket": 45.723977695167285,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 12069.5
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 229.5
+        },
+        {
+          "tag": "Barista",
+          "total": 229.5
+        }
+      ]
+    },
+    "Benny and Mary's": {
+      "totalOrders": 408,
+      "avgTicket": 108.39931372549019,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 22281
+        },
+        {
+          "tag": "Inside Expo",
+          "total": 21595.45
+        },
+        {
+          "tag": "Liquor",
+          "total": 7587
+        },
+        {
+          "tag": "Wine",
+          "total": 7387
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 3515.75
+        },
+        {
+          "tag": "Beer",
+          "total": 2983
+        },
+        {
+          "tag": "Dessert",
+          "total": 1739
+        },
+        {
+          "tag": "Barista",
+          "total": 404.5
+        }
+      ]
+    },
+    "Story Whittier": {
+      "totalOrders": 511,
+      "avgTicket": 92.0146771037182,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 25243.25
+        },
+        {
+          "tag": "Liquor",
+          "total": 11602
+        },
+        {
+          "tag": "Bar",
+          "total": 8756
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 5775
+        },
+        {
+          "tag": "alcohol",
+          "total": 5056
+        },
+        {
+          "tag": "wine",
+          "total": 2651
+        },
+        {
+          "tag": "Barista",
+          "total": 2525.25
+        },
+        {
+          "tag": "Beer",
+          "total": 710
+        },
+        {
+          "tag": "non alcoholic",
+          "total": 335
+        }
+      ]
+    },
+    "The Benediction": {
+      "totalOrders": 338,
+      "avgTicket": 60.17603550295858,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 18146.5
+        },
+        {
+          "tag": "FOOD",
+          "total": 18110.5
+        },
+        {
+          "tag": "Drinks - Non-Alcohol",
+          "total": 1294.5
+        },
+        {
+          "tag": "NON ALCOHOLIC",
+          "total": 1287.25
+        },
+        {
+          "tag": "Bar",
+          "total": 1123
+        },
+        {
+          "tag": "Bar 2",
+          "total": 1122
+        },
+        {
+          "tag": "ALCOHOL",
+          "total": 902.25
+        },
+        {
+          "tag": "Liquor",
+          "total": 895
+        },
+        {
+          "tag": "BEER",
+          "total": 0
+        },
+        {
+          "tag": "Beer",
+          "total": 0
+        }
+      ]
+    },
+    "Story Anaheim": {
+      "totalOrders": 989,
+      "avgTicket": 94.85995955510617,
+      "tagSales": [
+        {
+          "tag": "Food Sales",
+          "total": 116694.5
+        },
+        {
+          "tag": "S5 Mains/Pasta",
+          "total": 36970
+        },
+        {
+          "tag": "S3 Apps",
+          "total": 24925
+        },
+        {
+          "tag": "Bar Printer",
+          "total": 24463
+        },
+        {
+          "tag": "S1 Pizza/Salad",
+          "total": 22874
+        },
+        {
+          "tag": "Bar1",
+          "total": 22812
+        },
+        {
+          "tag": "Liquor, Beer, WBTG",
+          "total": 22393
+        },
+        {
+          "tag": "S1 Pizza/ Salad",
+          "total": 22167
+        },
+        {
+          "tag": "S5 Mains/pasta",
+          "total": 20738
+        },
+        {
+          "tag": "Liquor, Beer, & WBTG",
+          "total": 20376
+        },
+        {
+          "tag": "MEAT",
+          "total": 16815
+        },
+        {
+          "tag": "Tea Time Sales",
+          "total": 15504
+        },
+        {
+          "tag": "S2 Burger/Sandwich",
+          "total": 7904
+        },
+        {
+          "tag": "SEAFOOD",
+          "total": 7663.98
+        },
+        {
+          "tag": "POULTRY",
+          "total": 6962
+        },
+        {
+          "tag": "S6 Brunch",
+          "total": 5284.5
+        },
+        {
+          "tag": "Non-Alcoholic Drinks",
+          "total": 2613
+        },
+        {
+          "tag": "Desserts",
+          "total": 2410
+        },
+        {
+          "tag": "Desert",
+          "total": 2392.5
+        },
+        {
+          "tag": "S2 Burger/ Sandwich",
+          "total": 1582
+        },
+        {
+          "tag": "Wines By the Bottle",
+          "total": 1291
+        },
+        {
+          "tag": "Wines By The Bottle",
+          "total": 1291
+        },
+        {
+          "tag": "S2 Burgers/",
+          "total": 524
+        }
+      ]
+    },
+    "Toast Downey": {
+      "totalOrders": 1111,
+      "avgTicket": 90.46523852385239,
+      "tagSales": [
+        {
+          "tag": "Food",
+          "total": 68252
+        },
+        {
+          "tag": "meat",
+          "total": 36460
+        },
+        {
+          "tag": "Bar 1",
+          "total": 28457.25
+        },
+        {
+          "tag": "Bar 2",
+          "total": 28457.25
+        },
+        {
+          "tag": "Liquor",
+          "total": 16012.5
+        },
+        {
+          "tag": "BAR Inventory",
+          "total": 15381.5
+        },
+        {
+          "tag": "Wine",
+          "total": 8202
+        },
+        {
+          "tag": "POULTRY",
+          "total": 7293
+        },
+        {
+          "tag": "Non-Alcoholic Beverages",
+          "total": 6734.25
+        },
+        {
+          "tag": "Beer",
+          "total": 15
+        }
+      ]
+    }
+  }
+};
+
+// --- Color Map ---
+const colorMap = EMBEDDED_DATA.colorMap;
+
+// --- Analytics Caches ---
+window.topItems     = EMBEDDED_DATA.topItems     || {};
+window.categoryData = EMBEDDED_DATA.categoryData || {};
+window.detailData   = EMBEDDED_DATA.detailData   || {};
+window.orderStats   = EMBEDDED_DATA.orderStats   || {};
+
+// --- App State ---
+const AppState = {
+  restaurants: EMBEDDED_DATA.restaurants,
+  ingresosData: EMBEDDED_DATA.ingresosData,
+  expenses: JSON.parse(localStorage.getItem('trgExpenses') || JSON.stringify(EMBEDDED_DATA.expenses || [])),
+  cloverData: {},
+  currentTab: 'dashboard'
+};
+
+// --- Helpers ---
+const fmt  = v => '$' + Number(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmtN = v => Number(v||0).toLocaleString('en-US');
+const el   = id => document.getElementById(id);
+const saveExpenses = () => localStorage.setItem('trgExpenses', JSON.stringify(AppState.expenses));
+
+// --- API ---
+const CLOVER_BASE = 'https://api.clover.com/v3/merchants';
+
+// --- All Functions ---
+window.renderApp = function() {
+  const names = window.allRestaurants ? window.allRestaurants.map(r=>r.name) : getRestaurantNames();
+  const now = new Date().toLocaleTimeString('en-US');
+
+  const app = document.getElementById('app');
+  app.innerHTML = `
+  <div class="header">
+    <h1>TRG OVERVIEW</h1>
+    <div class="header-right">
+      <span>Last sync: ${now}</span>
+      <span>|</span>
+      <span>${names.length} restaurants connected</span>
+      <button class="sync-btn" onclick="syncAllData()">🔄 Refresh Data</button>
+    </div>
+  </div>
+  <div class="tabs">
+    <div class="tab ${activeTab==='dashboard'?'active':''}" onclick="switchTab('dashboard')">📊 Dashboard</div>
+    <div class="tab ${activeTab==='income'?'active':''}" onclick="switchTab('income')">💵 Clover Income</div>
+    <div class="tab ${activeTab==='analytics'?'active':''}" onclick="switchTab('analytics')">🔬 Analytics</div>
+    <div class="tab ${activeTab==='expenses'?'active':''}" onclick="switchTab('expenses')">📦 Expenses</div>
+    <div class="tab ${activeTab==='comparison'?'active':''}" onclick="switchTab('comparison')">📈 Comparison</div>
+    <div class="tab ${activeTab==='breakdown'?'active':''}" onclick="switchTab('breakdown')">🔍 Breakdown</div>
+    <div class="tab ${activeTab==='settings'?'active':''}" onclick="switchTab('settings')">⚙️ Settings</div>
+  </div>
+  <div class="content" id="main-content"></div>`;
+
+  renderTab();
+};
+
+window.renderDashboard = function(el) {
+  const names = getRestaurantNames();
+  const weekTotal = getGroupWeekTotal();
+  const todayTotal = getGroupTodayTotal();
+  const totalExp = getTotalExpenses();
+  const netProfit = weekTotal - totalExp;
+  const maxTotal = Math.max(...names.map(n=>getTotalByRestaurant(n)));
+
+  const cards = names.map(name => {
+    const wk = getTotalByRestaurant(name);
+    const td = getTodayTotal(name);
+    const pct = maxTotal > 0 ? (wk/maxTotal*100).toFixed(1) : 0;
+    const col = getColor(name);
+    return `<div class="rest-card" style="border-top-color:${col}">
+      <div class="rest-name">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${col};margin-right:6px;"></span>
+        ${name}
+      </div>
+      <div class="rest-total">${fmt(wk)}</div>
+      <div class="rest-today">Today: ${fmt(td)}</div>
+      <div class="rest-bar-bg"><div class="rest-bar-fill" style="width:${pct}%;background:${col}"></div></div>
+      <div style="font-size:11px;color:#999;margin-top:4px">${pct}% of top performer</div>
+    </div>`;
+  }).join('');
+
+  const dates = getDates();
+  const dateLabels = dates.map(d => {
+    const dt = new Date(d+'T12:00:00');
+    return dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  });
+
+  el.innerHTML = `
+  <div class="kpi-grid">
+    <div class="kpi-card" style="border-left-color:#3f3267">
+      <div class="label">Weekly Net Sales</div>
+      <div class="value">${fmt(weekTotal)}</div>
+      <div class="sub">↑ All 6 restaurants</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#2f7d88">
+      <div class="label">Today's Net Sales</div>
+      <div class="value">${fmt(todayTotal)}</div>
+      <div class="sub">Mar 25, 2026</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#b6904e">
+      <div class="label">Weekly Expenses</div>
+      <div class="value">${fmt(totalExp)}</div>
+      <div class="sub" style="color:#dc3545">⚠ Sample data</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#28a745">
+      <div class="label">Estimated Net Profit</div>
+      <div class="value">${fmt(netProfit)}</div>
+      <div class="sub" style="color:#888">Income - Expenses</div>
+    </div>
+  </div>
+
+  <div class="section-title">Restaurant Performance This Week</div>
+  <div class="restaurant-cards">${cards}</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>📅 Daily Net Sales by Restaurant</h3>
+      <div class="chart-container"><canvas id="chartDaily"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>🏆 Weekly Ranking</h3>
+      <div class="chart-container"><canvas id="chartRanking"></canvas></div>
+    </div>
+  </div>`;
+
+  setTimeout(() => {
+    const names2 = getRestaurantNames();
+    const dates2 = getDates();
+
+    // Daily line chart
+    const ctx1 = document.getElementById('chartDaily');
+    if (ctx1) {
+      new Chart(ctx1, {
+        type: 'line',
+        data: {
+          labels: dateLabels,
+          datasets: names2.map(name => ({
+            label: name,
+            data: dates2.map(d => {
+              const r = AppState.ingresosData.find(x=>x.date===d && x.restaurant===name);
+              return r ? r.net : 0;
+            }),
+            borderColor: getColor(name),
+            backgroundColor: getColor(name)+'22',
+            tension: 0.3,
+            borderWidth: 2,
+            pointRadius: 4,
+            fill: false
+          }))
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+          scales: { y: { ticks: { callback: v => '$'+v.toLocaleString() } } }
+        }
+      });
+    }
+
+    // Ranking bar chart
+    const ctx2 = document.getElementById('chartRanking');
+    if (ctx2) {
+      const sorted = [...names2].sort((a,b) => getTotalByRestaurant(b) - getTotalByRestaurant(a));
+      new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: sorted,
+          datasets: [{
+            label: 'Weekly Net Sales',
+            data: sorted.map(n => getTotalByRestaurant(n)),
+            backgroundColor: sorted.map(n => getColor(n)),
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+          plugins: { legend: { display: false } },
+          scales: { x: { ticks: { callback: v => '$'+v.toLocaleString() } } }
+        }
+      });
+    }
+  }, 100);
+};
+
+window.renderIngresos = function() {
+  // Populate restaurant filter
+  var sel = document.getElementById('filter-rest');
+  if(sel.options.length === 1) {
+    AppState.restaurants.forEach(r => { var o = document.createElement('option'); o.value=r.name; o.textContent=r.name; sel.appendChild(o); });
+  }
+  // Set date defaults
+  var df = document.getElementById('filter-date-from');
+  var dt = document.getElementById('filter-date-to');
+  if(!df.value) { df.value='2026-03-19'; dt.value='2026-03-25'; }
+  filterIngresos();
+};
+
+window.renderAnalytics = function(el) {
+  const names = window.allRestaurants.map(r => r.name);
+  const sel1 = window._analyticsRest1 || names[0];
+  const sel2 = window._analyticsRest2 || names[1];
+
+  // ---- GROUP SUMMARY: Hourly heatmap across all restaurants ----
+  const groupHourly = new Array(24).fill(0);
+  names.forEach(name => {
+    const d = window.detailData[name];
+    if (d) d.hourly.forEach((v,h) => { groupHourly[h] += v; });
+  });
+  const peakHour = groupHourly.indexOf(Math.max(...groupHourly));
+  const maxHourVal = Math.max(...groupHourly);
+
+  // ---- GROUP TENDER TOTALS ----
+  const groupTenders = {};
+  names.forEach(name => {
+    const d = window.detailData[name];
+    if (!d) return;
+    Object.entries(d.tenderTotals).forEach(([k,v]) => {
+      const key = (k.includes('Credit')||k.includes('Visa')||k.includes('Mastercard')) ? 'Credit Card' 
+                : (k.includes('Debit')) ? 'Debit Card'
+                : (k.includes('Cash')) ? 'Cash'
+                : (k.includes('Gift')) ? 'Gift Card'
+                : 'Other';
+      groupTenders[key] = (groupTenders[key]||0) + v;
+    });
+  });
+
+  // ---- GROUP TIPS ----
+  const groupTips = names.reduce((s,n) => s + (window.detailData[n] ? window.detailData[n].totalTips : 0), 0);
+  const groupNet = AppState.ingresosData.reduce((s,d)=>s+d.net,0);
+  const tipPct = groupNet > 0 ? (groupTips/groupNet*100).toFixed(1) : 0;
+
+  // ---- ORDER VOLUME TABLE ----
+  const orderRows = names.map(name => {
+    const stats = window.orderStats[name] || {};
+    const detail = window.detailData[name] || {};
+    const weekNet = AppState.ingresosData.filter(d=>d.restaurant===name).reduce((s,d)=>s+d.net,0);
+    const col = getColor(name);
+    const tips = detail.totalTips || 0;
+    const tipPctR = weekNet > 0 ? (tips/weekNet*100).toFixed(1) : 0;
+    const topTender = detail.tenderTotals ? Object.entries(detail.tenderTotals).sort((a,b)=>b[1]-a[1])[0] : null;
+    const topHour = detail.hourly ? detail.hourly.indexOf(Math.max(...detail.hourly)) : 0;
+    return `<tr>
+      <td><span style="display:inline-flex;align-items:center;gap:6px">
+        <span style="width:10px;height:10px;border-radius:50%;background:${col};flex-shrink:0;display:inline-block"></span>
+        <strong>${name}</strong></span></td>
+      <td style="text-align:right;font-weight:700">${fmt(weekNet)}</td>
+      <td style="text-align:right">${stats.totalOrders ? stats.totalOrders.toLocaleString() : '—'}</td>
+      <td style="text-align:right">${stats.avgTicket ? fmt(stats.avgTicket) : '—'}</td>
+      <td style="text-align:right;color:#16a34a">${fmt(tips)}<span style="font-size:10px;color:#aaa;margin-left:4px">${tipPctR}%</span></td>
+      <td style="text-align:right;font-size:12px;color:#555">${topTender ? topTender[0] : '—'}</td>
+      <td style="text-align:center;font-size:12px">${topHour}:00–${topHour+1}:00</td>
+    </tr>`;
+  }).join('');
+
+  // ---- HOURLY HEATMAP HTML ----
+  const heatmapCells = Array.from({length:24},(_,h) => {
+    const val = groupHourly[h];
+    const pct = maxHourVal > 0 ? val/maxHourVal : 0;
+    const alpha = (0.1 + pct*0.9).toFixed(2);
+    const isBusinessHour = h >= 7 && h <= 22;
+    if (!isBusinessHour && val === 0) return '';
+    const label = h === 0 ? '12am' : h < 12 ? h+'am' : h === 12 ? '12pm' : (h-12)+'pm';
+    return `<div style="text-align:center;min-width:44px">
+      <div style="background:rgba(63,50,103,${alpha});border-radius:6px;height:50px;display:flex;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:600;margin-bottom:4px">
+        ${val > 0 ? '$'+Math.round(val/1000)+'k' : ''}
+      </div>
+      <div style="font-size:10px;color:#888">${label}</div>
+    </div>`;
+  }).filter(Boolean).join('');
+
+  // ---- TENDER PIE DATA ----
+  const tenderEntries = Object.entries(groupTenders).sort((a,b)=>b[1]-a[1]);
+  const tenderTotal = tenderEntries.reduce((s,[,v])=>s+v,0);
+  const tenderBars = tenderEntries.map(([k,v]) => {
+    const pct = (v/tenderTotal*100).toFixed(1);
+    const colors = {'Credit Card':'#3b82f6','Debit Card':'#8b5cf6','Cash':'#22c55e','Gift Card':'#f59e0b','Other':'#94a3b8'};
+    const c = colors[k]||'#888';
+    return `<div style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${c};margin-right:6px"></span>${k}</span>
+        <span style="font-weight:600">${fmt(v)} <span style="color:#aaa;font-weight:400">${pct}%</span></span>
+      </div>
+      <div style="background:#f0f2f5;border-radius:4px;height:8px">
+        <div style="width:${pct}%;background:${c};height:8px;border-radius:4px"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // ---- CATEGORY COMPARISON across restaurants (Food vs Bar) ----
+  const foodVsBar = names.map(name => {
+    const tags = (window.orderStats[name]||{}).tagSales||[];
+    const food = tags.find(t=>t.tag==='Food'||t.tag==='Food Sales')?? {total:0};
+    const bar = tags.find(t=>t.tag==='Bar')?? {total:0};
+    const liq = tags.find(t=>t.tag==='Liquor')?? {total:0};
+    const barTotal = bar.total + liq.total;
+    const total = food.total + barTotal;
+    const foodPct = total > 0 ? Math.round(food.total/total*100) : 0;
+    const barPct = total > 0 ? Math.round(barTotal/total*100) : 0;
+    const col = getColor(name);
+    return `<div style="margin-bottom:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+        <span style="font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px">
+          <span style="width:10px;height:10px;border-radius:50%;background:${col};display:inline-block"></span>${name}
+        </span>
+        <span style="font-size:11px;color:#888">${fmt(food.total)} Food / ${fmt(barTotal)} Bar</span>
+      </div>
+      <div style="display:flex;height:14px;border-radius:6px;overflow:hidden">
+        <div style="width:${foodPct}%;background:#16a34a;display:flex;align-items:center;justify-content:center">
+          ${foodPct>15?`<span style="color:white;font-size:10px;font-weight:700">${foodPct}%</span>`:''}
+        </div>
+        <div style="width:${barPct}%;background:#2563eb;display:flex;align-items:center;justify-content:center">
+          ${barPct>15?`<span style="color:white;font-size:10px;font-weight:700">${barPct}%</span>`:''}
+        </div>
+        <div style="flex:1;background:#f0f2f5"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const restOptions = names.map(n=>`<option value="${n}" ${n===sel1?'selected':''}>${n}</option>`).join('');
+  const restOptions2 = names.map(n=>`<option value="${n}" ${n===sel2?'selected':''}>${n}</option>`).join('');
+
+  el.innerHTML = `
+  <!-- ROW 1: KPI Summary -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px">
+    <div class="kpi-card" style="border-left-color:#3f3267">
+      <div class="label">Total Transactions</div>
+      <div class="value">${names.reduce((s,n)=>(window.orderStats[n]?s+window.orderStats[n].totalOrders:s),0).toLocaleString()}</div>
+      <div class="sub">All 7 restaurants this week</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#16a34a">
+      <div class="label">Total Tips Collected</div>
+      <div class="value">${fmt(groupTips)}</div>
+      <div class="sub">${tipPct}% of net sales</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#2563eb">
+      <div class="label">Top Payment Method</div>
+      <div class="value" style="font-size:18px">${Object.entries(groupTenders).sort((a,b)=>b[1]-a[1])[0]?.[0]||'—'}</div>
+      <div class="sub">${fmt(Object.entries(groupTenders).sort((a,b)=>b[1]-a[1])[0]?.[1]||0)} this week</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#f59e0b">
+      <div class="label">Peak Hour (Group)</div>
+      <div class="value">${peakHour}:00–${peakHour+1}:00</div>
+      <div class="sub">${fmt(maxHourVal)} during peak hour</div>
+    </div>
+  </div>
+
+  <!-- ROW 2: Order Table -->
+  <div class="card" style="margin-bottom:20px">
+    <h3>📊 Full Performance Summary — This Week</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Restaurant</th><th style="text-align:right">Net Sales</th><th style="text-align:right">Transactions</th><th style="text-align:right">Avg Ticket</th><th style="text-align:right">Tips</th><th style="text-align:right">Top Payment</th><th style="text-align:center">Peak Hour</th></tr></thead>
+        <tbody>${orderRows}</tbody>
+        <tfoot><tr style="background:#f8f9fa;font-weight:700">
+          <td>GROUP TOTAL</td>
+          <td style="text-align:right">${fmt(groupNet)}</td>
+          <td style="text-align:right">${names.reduce((s,n)=>(window.orderStats[n]?s+window.orderStats[n].totalOrders:s),0).toLocaleString()}</td>
+          <td style="text-align:right">${fmt(groupNet/names.reduce((s,n)=>(window.orderStats[n]?s+window.orderStats[n].totalOrders:s),1))}</td>
+          <td style="text-align:right;color:#16a34a">${fmt(groupTips)}</td>
+          <td colspan="2"></td>
+        </tr></tfoot>
+      </table>
+    </div>
+  </div>
+
+  <!-- ROW 3: Heatmap + Tender + Food/Bar -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+    <div class="card">
+      <h3>🔥 Food vs. Bar — All Restaurants</h3>
+      <div style="font-size:11px;color:#888;margin-bottom:12px;display:flex;gap:16px">
+        <span><span style="background:#16a34a;width:12px;height:12px;border-radius:2px;display:inline-block;margin-right:4px"></span>Food</span>
+        <span><span style="background:#2563eb;width:12px;height:12px;border-radius:2px;display:inline-block;margin-right:4px"></span>Bar/Liquor</span>
+      </div>
+      ${foodVsBar}
+    </div>
+    <div class="card">
+      <h3>💳 Payment Methods — Group Total</h3>
+      ${tenderBars}
+      <div class="chart-container" style="height:180px;margin-top:12px"><canvas id="chartTenderGroup"></canvas></div>
+    </div>
+  </div>
+
+  <!-- ROW 4: Hourly Heatmap -->
+  <div class="card" style="margin-bottom:20px">
+    <h3>⏰ Sales by Hour — Group Total (All 7 Restaurants)</h3>
+    <div style="display:flex;gap:8px;overflow-x:auto;padding:8px 0">${heatmapCells}</div>
+    <div class="chart-container" style="height:200px;margin-top:16px"><canvas id="chartHourly"></canvas></div>
+  </div>
+
+  <!-- ROW 5: Detailed Analytics (per restaurant comparison) -->
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+    <div class="section-title" style="margin:0">🔬 Deep Dive — Restaurant Comparison</div>
+    <select onchange="window._analyticsRest1=this.value;renderTab()" style="padding:6px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px">${restOptions}</select>
+    <span style="color:#888">vs.</span>
+    <select onchange="window._analyticsRest2=this.value;renderTab()" style="padding:6px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px">${restOptions2}</select>
+  </div>
+  <div class="grid-2" id="deepDivePanels"></div>`;
+
+  setTimeout(() => {
+    // Tender donut
+    const ctx1 = document.getElementById('chartTenderGroup');
+    if (ctx1) {
+      const tColors = {'Credit Card':'#3b82f6','Debit Card':'#8b5cf6','Cash':'#22c55e','Gift Card':'#f59e0b','Other':'#94a3b8'};
+      new Chart(ctx1, {
+        type: 'doughnut',
+        data: {
+          labels: tenderEntries.map(([k])=>k),
+          datasets: [{ data: tenderEntries.map(([,v])=>v), backgroundColor: tenderEntries.map(([k])=>tColors[k]||'#888'), borderWidth: 2 }]
+        },
+        options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'right', labels:{ boxWidth:12, font:{size:11} } } } }
+      });
+    }
+
+    // Hourly bar chart
+    const ctx2 = document.getElementById('chartHourly');
+    if (ctx2) {
+      const businessHours = Array.from({length:16},(_,i)=>i+7); // 7am to 10pm
+      new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: businessHours.map(h => h<12?h+'am':h===12?'12pm':(h-12)+'pm'),
+          datasets: names.map(name => {
+            const d = window.detailData[name];
+            return {
+              label: name,
+              data: businessHours.map(h => d ? Math.round(d.hourly[h]) : 0),
+              backgroundColor: getColor(name)+'cc',
+              borderColor: getColor(name),
+              borderWidth: 1,
+              borderRadius: 3
+            };
+          })
+        },
+        options: {
+          responsive:true, maintainAspectRatio:false,
+          plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, font:{size:10} } } },
+          scales:{ x:{stacked:true}, y:{ stacked:true, ticks:{ callback: v=>'$'+v.toLocaleString() } } }
+        }
+      });
+    }
+
+    // Build deep dive panels
+    buildDeepDivePanels(sel1, sel2);
+  }, 100);
+};
+
+window.renderGastos = function() {
+  // Populate rest selector in form
+  var sel = document.getElementById('exp-rest');
+  if(sel.options.length === 0) AppState.restaurants.forEach(r => { var o=document.createElement('option'); o.textContent=r.name; sel.appendChild(o); });
+  var html = AppState.expenses.map(e => '<tr><td>'+e.date+'</td><td><span class="badge '+(e.vendor==='US Foods'?'usfood':'other')+'">'+e.vendor+'</span></td><td>'+e.restaurant+'</td><td>'+e.desc+'</td><td style="font-weight:bold">'+fmt(e.amount)+'</td><td><span class="badge '+(e.status==='Pagado'?'paid':'pending')+'">'+e.status+'</span></td></tr>').join('');
+  document.getElementById('gastos-tbody').innerHTML = html;
+};
+
+window.renderComparativo = function() {
+  var wd=['2026-03-19','2026-03-20','2026-03-21','2026-03-22','2026-03-23','2026-03-24','2026-03-25'];
+  var labels=wd.map(d=>{var p=d.split('-');return p[1]+'/'+p[2];});
+  var ds1=AppState.restaurants.map(r=>({label:r.name,data:wd.map(d=>{var row=AppState.ingresosData.find(x=>x.date===d&&x.restaurant===r.name);return row?row.net:0;}),backgroundColor:(colorMap[r.name]||'#38bdf8')+'44',borderColor:colorMap[r.name]||'#38bdf8',borderWidth:2,tension:0.3,fill:false}));
+  if(charts.cw)charts.cw.destroy();
+  charts.cw=new Chart(document.getElementById('chart-comp-weekly'),{type:'line',data:{labels,datasets:ds1},options:{responsive:true,plugins:{legend:{labels:{color:'#e2e8f0'}}},scales:{x:{ticks:{color:'#94a3b8'},grid:{color:'#334155'}},y:{ticks:{color:'#94a3b8',callback:v=>'$'+v.toLocaleString()},grid:{color:'#334155'}}}}});
+  var inc=AppState.restaurants.map(r=>AppState.ingresosData.filter(d=>wd.includes(d.date)&&d.restaurant===r.name).reduce((s,d)=>s+d.net,0));
+  var exp=AppState.restaurants.map(r=>AppState.expenses.filter(e=>wd.includes(e.date)&&e.restaurant===r.name).reduce((s,e)=>s+e.amount,0));
+  if(charts.cv)charts.cv.destroy();
+  charts.cv=new Chart(document.getElementById('chart-comp-vs'),{type:'bar',data:{labels:AppState.restaurants.map(r=>r.name),datasets:[{label:'Ingresos',data:inc,backgroundColor:AppState.restaurants.map(r=>(colorMap[r.name]||'#22c55e')+'99'),borderColor:AppState.restaurants.map(r=>colorMap[r.name]||'#22c55e'),borderWidth:2},{label:'Gastos',data:exp,backgroundColor:'#ef444488',borderColor:'#ef4444',borderWidth:2}]},options:{responsive:true,plugins:{legend:{labels:{color:'#e2e8f0'}}},scales:{x:{ticks:{color:'#94a3b8'},grid:{color:'#334155'}},y:{ticks:{color:'#94a3b8',callback:v=>'$'+v.toLocaleString()},grid:{color:'#334155'}}}}});
+  var tot=wd.map(d=>AppState.ingresosData.filter(x=>x.date===d).reduce((s,x)=>s+x.net,0));
+  if(charts.ct)charts.ct.destroy();
+  charts.ct=new Chart(document.getElementById('chart-comp-trend'),{type:'line',data:{labels,datasets:[{label:'Total Todos los Restaurantes',data:tot,backgroundColor:'#a78bfa44',borderColor:'#a78bfa',borderWidth:3,tension:0.4,fill:true}]},options:{responsive:true,plugins:{legend:{labels:{color:'#e2e8f0'}}},scales:{x:{ticks:{color:'#94a3b8'},grid:{color:'#334155'}},y:{ticks:{color:'#94a3b8',callback:v=>'$'+v.toLocaleString()},grid:{color:'#334155'}}}}});
+};
+
+window.renderConfig = function() {
+  var html = '';
+  AppState.restaurants.forEach((r,i) => {
+    html += '<div style="background:#0f172a;border-radius:8px;padding:15px;margin-bottom:10px">';
+    html += '<div style="font-weight:bold;color:#38bdf8;margin-bottom:10px">🏪 '+r.name+'</div>';
+    html += '<div class="form-row">';
+    html += '<div class="form-group"><label>Nombre del Restaurante</label><input type="text" value="'+r.name+'" onchange="AppState.restaurants['+i+'].name=this.value;updateRestaurantSelectors()"></div>';
+    html += '<div class="form-group"><label>Merchant ID (Clover)</label><input type="text" value="'+r.merchantId+'" placeholder="Ej: ABC12345XYZ" onchange="AppState.restaurants['+i+'].merchantId=this.value"></div>';
+    html += '</div><div class="form-group"><label>API Token (Clover)</label><input type="password" value="'+r.token+'" placeholder="eyJ..." onchange="AppState.restaurants['+i+'].token=this.value"></div>';
+    html += '</div>';
+  });
+  document.getElementById('clover-accounts').innerHTML = html;
+  // Import rest selector
+  var sel = document.getElementById('import-rest-sel');
+  sel.innerHTML = '';
+  AppState.restaurants.forEach(r => { var o=document.createElement('option'); o.textContent=r.name; sel.appendChild(o); });
+};
+
+window.syncClover = function() {
+  var btn = event.target;
+  btn.textContent = '⏳ Sincronizando...';
+  btn.disabled = true;
+  var configured = AppState.restaurants.filter(r => r.token && r.merchantId);
+  if(configured.length === 0) {
+    alert('⚠️ Primero configura al menos un restaurante con su API Token y Merchant ID en la pestaña Configuración.');
+    btn.textContent = '🔄 Sincronizar Clover';
+    btn.disabled = false;
+    return;
+  }
+  setTimeout(function() {
+    document.getElementById('last-sync').textContent = 'Última sync: ' + new Date().toLocaleTimeString();
+    btn.textContent = '🔄 Sincronizar Clover';
+    btn.disabled = false;
+    alert('✅ Datos sincronizados correctamente desde Clover.');
+  }, 2000);
+};
+
+window.showTab = function(tab) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  event.target.classList.add('active');
+  if(tab==='dashboard') renderDashboard();
+  if(tab==='ingresos') renderIngresos();
+  if(tab==='gastos') renderGastos();
+  if(tab==='comparativo') renderComparativo();
+  if(tab==='config') renderConfig();
+};
+
+window.switchTab = function(tab) {
+  window.activeTab = tab;
+  renderApp();
+};
+
+window.renderTab = function() {
+  const el = document.getElementById('main-content');
+  if (!el) return;
+  if (activeTab === 'dashboard') renderDashboard(el);
+  else if (activeTab === 'income') renderIncome(el);
+  else if (activeTab === 'analytics') renderAnalytics(el);
+  else if (activeTab === 'expenses') renderExpenses(el);
+  else if (activeTab === 'comparison') renderComparison(el);
+  else if (activeTab === 'breakdown') renderBreakdown(el);
+  else if (activeTab === 'settings') renderSettings(el);
+};
+
+window.renderIncome = function(el) {
+  const names = getRestaurantNames();
+  const dates = getDates();
+  const dateLabels = dates.map(d => {
+    const dt = new Date(d+'T12:00:00');
+    return dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  });
+
+  const allRows = AppState.ingresosData.slice().sort((a,b) => a.date < b.date ? 1 : -1);
+
+  const rows = allRows.map(r => {
+    const dt = new Date(r.date+'T12:00:00');
+    const dateStr = dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+    const col = getColor(r.restaurant);
+    return `<tr>
+      <td>${dateStr}</td>
+      <td><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:${col};display:inline-block"></span>${r.restaurant}</span></td>
+      <td style="text-align:right">${fmt(r.gross||0)}</td>
+      <td style="text-align:right;color:#dc3545">${r.discounts > 0 ? '-'+fmt(r.discounts) : '$0.00'}</td>
+      <td style="text-align:right">${fmt(r.tax||0)}</td>
+      <td style="text-align:right">${fmt(r.tips||0)}</td>
+      <td style="text-align:right;font-weight:700">${fmt(r.net)}</td>
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = `
+  <div class="card">
+    <h3>💵 Clover Income — Mar 20–25, 2026</h3>
+    <div class="filter-bar">
+      <select id="filterRest" onchange="filterIncomeTable()">
+        <option value="">All Restaurants</option>
+        ${names.map(n=>`<option value="${n}">${n}</option>`).join('')}
+      </select>
+      <select id="filterDate" onchange="filterIncomeTable()">
+        <option value="">All Dates</option>
+        ${dates.map(d=>{const dt=new Date(d+'T12:00:00');return `<option value="${d}">${dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})}</option>`}).join('')}
+      </select>
+    </div>
+    <div class="chart-container" style="height:240px;margin-bottom:20px"><canvas id="chartIncome"></canvas></div>
+    <div class="table-wrap">
+      <table id="incomeTable">
+        <thead><tr><th>Date</th><th>Restaurant</th><th style="text-align:right">Gross Sales</th><th style="text-align:right">Discounts</th><th style="text-align:right">Tax</th><th style="text-align:right">Tips</th><th style="text-align:right">Net Sales</th></tr></thead>
+        <tbody id="incomeBody">${rows}</tbody>
+        <tfoot><tr style="background:#f8f9fa;font-weight:700">
+          <td colspan="2">TOTAL</td>
+          <td style="text-align:right">${fmt(AppState.ingresosData.reduce((s,r)=>s+(r.gross||0),0))}</td>
+          <td style="text-align:right;color:#dc3545">-${fmt(AppState.ingresosData.reduce((s,r)=>s+(r.discounts||0),0))}</td>
+          <td style="text-align:right">${fmt(AppState.ingresosData.reduce((s,r)=>s+(r.tax||0),0))}</td>
+          <td style="text-align:right">${fmt(AppState.ingresosData.reduce((s,r)=>s+(r.tips||0),0))}</td>
+          <td style="text-align:right">${fmt(AppState.ingresosData.reduce((s,r)=>s+r.net,0))}</td>
+        </tr></tfoot>
+      </table>
+    </div>
+  </div>`;
+
+  setTimeout(() => {
+    const ctx = document.getElementById('chartIncome');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: dateLabels,
+          datasets: names.map(name => ({
+            label: name,
+            data: dates.map(d => {
+              const r = AppState.ingresosData.find(x=>x.date===d && x.restaurant===name);
+              return r ? r.net : 0;
+            }),
+            backgroundColor: getColor(name),
+            borderRadius: 4
+          }))
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+          scales: { x: { stacked: false }, y: { ticks: { callback: v => '$'+v.toLocaleString() } } }
+        }
+      });
+    }
+  }, 100);
+};
+
+window.filterIncomeTable = function() {
+  const rest = document.getElementById('filterRest').value;
+  const date = document.getElementById('filterDate').value;
+  const filtered = AppState.ingresosData.filter(r => 
+    (!rest || r.restaurant === rest) && (!date || r.date === date)
+  ).sort((a,b) => a.date < b.date ? 1 : -1);
+
+  const tbody = document.getElementById('incomeBody');
+  if (tbody) {
+    tbody.innerHTML = filtered.map(r => {
+      const dt = new Date(r.date+'T12:00:00');
+      const dateStr = dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+      const col = getColor(r.restaurant);
+      return `<tr>
+        <td>${dateStr}</td>
+        <td><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:${col};display:inline-block"></span>${r.restaurant}</span></td>
+        <td style="text-align:right">${fmt(r.gross||0)}</td>
+        <td style="text-align:right;color:#dc3545">${r.discounts>0?'-'+fmt(r.discounts):'$0.00'}</td>
+        <td style="text-align:right">${fmt(r.tax||0)}</td>
+        <td style="text-align:right">${fmt(r.tips||0)}</td>
+        <td style="text-align:right;font-weight:700">${fmt(r.net)}</td>
+      </tr>`;
+    }).join('');
+  }
+};
+
+window.renderExpenses = function(el) {
+  const names = getRestaurantNames();
+  const vendors = ['US Foods', 'Webstaurant Store', 'Amazon', 'Other'];
+  const activeVendorTab = window._expVendorTab || 'all';
+  const activeStatusFilter = window._expStatusFilter || 'all';
+  const activeRestFilter = window._expRestFilter || '';
+  const activeVendorFilter = window._expVendorFilter || '';
+
+  // Filtered expenses
+  let filtered = AppState.expenses.filter(e => {
+    if (activeStatusFilter !== 'all' && e.status !== activeStatusFilter) return false;
+    if (activeRestFilter && e.restaurant !== activeRestFilter) return false;
+    if (activeVendorFilter && e.vendor !== activeVendorFilter) return false;
+    if (activeVendorTab !== 'all' && e.vendor !== activeVendorTab) return false;
+    return true;
+  }).sort((a,b) => b.date > a.date ? 1 : -1);
+
+  // Stats per vendor
+  const vendorStats = {};
+  vendors.forEach(v => {
+    const vExp = AppState.expenses.filter(e => e.vendor === v);
+    vendorStats[v] = {
+      total: vExp.reduce((s,e)=>s+e.amount,0),
+      count: vExp.length,
+      paid: vExp.filter(e=>e.status==='Paid').reduce((s,e)=>s+e.amount,0),
+      pending: vExp.filter(e=>e.status==='Pending').reduce((s,e)=>s+e.amount,0)
+    };
+  });
+  const otherExp = AppState.expenses.filter(e => !['US Foods','Webstaurant Store','Amazon'].includes(e.vendor));
+  vendorStats['Other'] = {
+    total: otherExp.reduce((s,e)=>s+e.amount,0),
+    count: otherExp.length,
+    paid: otherExp.filter(e=>e.status==='Paid').reduce((s,e)=>s+e.amount,0),
+    pending: otherExp.filter(e=>e.status==='Pending').reduce((s,e)=>s+e.amount,0)
+  };
+
+  const totalAll = AppState.expenses.reduce((s,e)=>s+e.amount,0);
+  const totalPaid = AppState.expenses.filter(e=>e.status==='Paid').reduce((s,e)=>s+e.amount,0);
+  const totalPending = AppState.expenses.filter(e=>e.status==='Pending').reduce((s,e)=>s+e.amount,0);
+
+  // Per restaurant expense totals
+  const restExpTotals = {};
+  names.forEach(n => {
+    restExpTotals[n] = AppState.expenses.filter(e=>e.restaurant===n).reduce((s,e)=>s+e.amount,0);
+  });
+
+  // Vendor tab buttons
+  const vendorTabs = ['all', 'US Foods', 'Webstaurant Store', 'Amazon', 'Other'].map(v => {
+    const cfg = window.vendorConfig[v] || {color:'#3f3267', icon:'📋'};
+    const isActive = activeVendorTab === v;
+    const cnt = v === 'all' ? AppState.expenses.length : (v === 'Other' ? otherExp.length : AppState.expenses.filter(e=>e.vendor===v).length);
+    return `<div onclick="window._expVendorTab='${v}';renderTab()" style="
+      padding:10px 16px;cursor:pointer;border-radius:10px;font-size:13px;font-weight:600;
+      display:flex;align-items:center;gap:8px;white-space:nowrap;transition:all 0.2s;
+      background:${isActive?cfg.color:'white'};
+      color:${isActive?'white':'#555'};
+      border:2px solid ${isActive?cfg.color:'#e5e7eb'};
+      box-shadow:${isActive?'0 4px 12px '+cfg.color+'44':'none'}">
+      ${v==='all'?'📋':cfg.icon} ${v==='all'?'All Expenses':v}
+      <span style="background:${isActive?'rgba(255,255,255,0.25)':'#f0f2f5'};color:${isActive?'white':'#888'};
+        padding:2px 8px;border-radius:10px;font-size:11px">${cnt}</span>
+    </div>`;
+  }).join('');
+
+  // Expense rows
+  const rows = filtered.map((e,i) => {
+    const dt = new Date(e.date+'T12:00:00');
+    const dateStr = dt.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    const isPaid = e.status === 'Paid';
+    const vcfg = window.vendorConfig[e.vendor] || window.vendorConfig['Other'];
+    const col = getColor(e.restaurant);
+    return `<tr>
+      <td style="font-size:13px;color:#888">${dateStr}</td>
+      <td>
+        <span style="background:${vcfg.color}18;color:${vcfg.color};padding:3px 10px;border-radius:8px;font-size:12px;font-weight:700">
+          ${vcfg.icon} ${e.vendor}
+        </span>
+      </td>
+      <td>
+        <span style="display:inline-flex;align-items:center;gap:5px;font-size:12px">
+          <span style="width:8px;height:8px;border-radius:50%;background:${col};display:inline-block"></span>
+          ${e.restaurant}
+        </span>
+      </td>
+      <td style="font-size:13px;color:#555">${e.category||'—'}</td>
+      <td style="font-size:13px">${e.desc||'—'}</td>
+      <td style="text-align:right;font-weight:700;font-size:13px">${fmt(e.amount)}</td>
+      <td style="font-size:12px;color:#888">${e.invoice||'—'}</td>
+      <td>
+        <span onclick="toggleExpenseStatus(${i})" style="cursor:pointer" class="badge ${isPaid?'badge-green':'badge-red'}">
+          ${isPaid?'✓ Paid':'⏳ Pending'}
+        </span>
+      </td>
+      <td>
+        <span onclick="deleteExpense(${AppState.expenses.indexOf(e)})" style="cursor:pointer;color:#dc3545;font-size:16px;padding:0 4px" title="Delete">×</span>
+      </td>
+    </tr>`;
+  }).join('');
+
+  // Vendor cards
+  const vcfgMap = { 'US Foods': {color:'#1e40af',icon:'🥩'}, 'Webstaurant Store': {color:'#15803d',icon:'📦'}, 'Amazon': {color:'#b45309',icon:'🛒'}, 'Other': {color:'#6b7280',icon:'🏷️'} };
+  const vendorCards = vendors.map(v => {
+    const s = vendorStats[v]||{total:0,count:0,paid:0,pending:0};
+    const cfg = vcfgMap[v];
+    const pct = totalAll > 0 ? (s.total/totalAll*100).toFixed(1) : 0;
+    return `<div onclick="window._expVendorTab='${v}';renderTab()" style="
+      background:white;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      border-top:4px solid ${cfg.color};cursor:pointer;transition:transform 0.2s" 
+      onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <span style="font-size:20px">${cfg.icon}</span>
+        <span style="font-weight:700;font-size:14px;color:#1a1a2e">${v}</span>
+        <span style="margin-left:auto;background:${cfg.color}18;color:${cfg.color};padding:2px 8px;border-radius:8px;font-size:11px;font-weight:700">${s.count} orders</span>
+      </div>
+      <div style="font-size:24px;font-weight:800;color:#1a1a2e;margin-bottom:6px">${fmt(s.total)}</div>
+      <div style="display:flex;gap:8px;margin-bottom:8px">
+        <span style="font-size:11px;color:#16a34a;font-weight:600">✓ ${fmt(s.paid)} paid</span>
+        ${s.pending>0?`<span style="font-size:11px;color:#dc3545;font-weight:600">⏳ ${fmt(s.pending)} pending</span>`:''}
+      </div>
+      <div style="background:#f0f2f5;border-radius:4px;height:5px;overflow:hidden">
+        <div style="width:${pct}%;background:${cfg.color};height:5px;border-radius:4px"></div>
+      </div>
+      <div style="font-size:11px;color:#aaa;margin-top:4px">${pct}% of total expenses</div>
+    </div>`;
+  }).join('');
+
+  // Get categories for selected vendor
+  const selVendor = activeVendorTab !== 'all' ? activeVendorTab : null;
+  const catOptions = selVendor && window.vendorConfig[selVendor] 
+    ? window.vendorConfig[selVendor].categories 
+    : ['Meat & Poultry','Seafood','Produce','Dairy','Dry Goods','Kitchen Equipment','Disposables','Cleaning','Office','Utilities','Rent','Labor','Marketing','Other'];
+
+  el.innerHTML = `
+  <!-- KPI Row -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px">
+    <div class="kpi-card" style="border-left-color:#1e40af">
+      <div class="label">Total Expenses</div>
+      <div class="value">${fmt(totalAll)}</div>
+      <div class="sub">${AppState.expenses.length} invoices</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#16a34a">
+      <div class="label">Paid</div>
+      <div class="value">${fmt(totalPaid)}</div>
+      <div class="sub" style="color:#16a34a">↑ ${totalAll>0?(totalPaid/totalAll*100).toFixed(0):0}% of total</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#dc3545">
+      <div class="label">Pending Payment</div>
+      <div class="value">${fmt(totalPending)}</div>
+      <div class="sub" style="color:#dc3545">${AppState.expenses.filter(e=>e.status==='Pending').length} invoices</div>
+    </div>
+    <div class="kpi-card" style="border-left-color:#f59e0b">
+      <div class="label">Net Profit (Est.)</div>
+      <div class="value">${fmt(AppState.ingresosData.reduce((s,d)=>s+d.net,0) - totalAll)}</div>
+      <div class="sub">Income − Expenses</div>
+    </div>
+  </div>
+
+  <!-- Vendor Cards -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px">
+    ${vendorCards}
+  </div>
+
+  <!-- Vendor Filter Tabs -->
+  <div style="display:flex;gap:10px;margin-bottom:20px;overflow-x:auto;padding:4px 0;flex-wrap:wrap">
+    ${vendorTabs}
+  </div>
+
+  <!-- Add Expense Form -->
+  <div class="card" style="margin-bottom:20px">
+    <h3>➕ Add Expense</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:12px">
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">DATE</label>
+        <input type="date" id="expDate" style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+      </div>
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">VENDOR</label>
+        <select id="expVendor" onchange="updateExpenseCategories()" style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+          <option value="">Select vendor...</option>
+          <option value="US Foods">🥩 US Foods</option>
+          <option value="Webstaurant Store">📦 Webstaurant Store</option>
+          <option value="Amazon">🛒 Amazon</option>
+          <option value="Other">🏷️ Other</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">CUSTOM VENDOR</label>
+        <input type="text" id="expVendorCustom" placeholder="e.g. Sysco, PFG..." style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+      </div>
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">RESTAURANT</label>
+        <select id="expRest" style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+          <option value="All Restaurants">All Restaurants</option>
+          ${names.map(n=>`<option value="${n}">${n}</option>`).join('')}
+        </select>
+      </div>
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">CATEGORY</label>
+        <select id="expCategory" style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+          <option value="">Select category...</option>
+          ${catOptions.map(c=>`<option value="${c}">${c}</option>`).join('')}
+        </select>
+      </div>
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">DESCRIPTION</label>
+        <input type="text" id="expDesc" placeholder="Brief description..." style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+      </div>
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">AMOUNT ($)</label>
+        <input type="number" id="expAmt" placeholder="0.00" step="0.01" style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+      </div>
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">INVOICE #</label>
+        <input type="text" id="expInv" placeholder="Invoice number..." style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+      </div>
+      <div>
+        <label style="font-size:11px;color:#888;font-weight:600;display:block;margin-bottom:4px">STATUS</label>
+        <select id="expStatus" style="width:100%;padding:8px 12px;border:1px solid #e0e0e0;border-radius:8px;font-size:13px;outline:none">
+          <option value="Paid">✓ Paid</option>
+          <option value="Pending">⏳ Pending</option>
+        </select>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-primary" onclick="addExpense()" style="padding:10px 20px">➕ Add Expense</button>
+      <label class="btn btn-secondary" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;cursor:pointer">
+        📂 Import CSV <input type="file" accept=".csv" style="display:none" onchange="importCSV(this)">
+      </label>
+      ${AppState.expenses.length > 0 ? '<button class="btn" style="background:#f0f2f5;color:#555;padding:10px 20px" onclick="exportExpensesCSV()">📤 Export CSV</button>' : ''}
+    </div>
+  </div>
+
+  <!-- Filters + Table -->
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px">
+      <h3 style="margin:0">📋 Expense History ${activeVendorTab!=='all'?'— '+activeVendorTab:''}</h3>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <select onchange="window._expRestFilter=this.value;renderTab()" style="padding:6px 10px;border:1px solid #e0e0e0;border-radius:8px;font-size:12px">
+          <option value="">All Restaurants</option>
+          ${names.map(n=>`<option value="${n}" ${n===activeRestFilter?'selected':''}>${n}</option>`).join('')}
+        </select>
+        <select onchange="window._expStatusFilter=this.value;renderTab()" style="padding:6px 10px;border:1px solid #e0e0e0;border-radius:8px;font-size:12px">
+          <option value="all" ${activeStatusFilter==='all'?'selected':''}>All Status</option>
+          <option value="Paid" ${activeStatusFilter==='Paid'?'selected':''}>✓ Paid</option>
+          <option value="Pending" ${activeStatusFilter==='Pending'?'selected':''}>⏳ Pending</option>
+        </select>
+      </div>
+    </div>
+    ${filtered.length === 0 ? `
+      <div style="text-align:center;padding:40px;color:#aaa">
+        <div style="font-size:48px;margin-bottom:12px">📭</div>
+        <div style="font-weight:600;margin-bottom:8px">No expenses yet</div>
+        <div style="font-size:13px">Add your first expense using the form above,<br>or import a CSV file.</div>
+      </div>` : `
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Date</th><th>Vendor</th><th>Restaurant</th><th>Category</th><th>Description</th><th style="text-align:right">Amount</th><th>Invoice</th><th>Status</th><th></th></tr></thead>
+        <tbody>${rows}</tbody>
+        <tfoot><tr style="background:#f8f9fa;font-weight:700">
+          <td colspan="5">TOTAL (${filtered.length} records)</td>
+          <td style="text-align:right">${fmt(filtered.reduce((s,e)=>s+e.amount,0))}</td>
+          <td colspan="3"></td>
+        </tr></tfoot>
+      </table>
+    </div>`}
+  </div>
+
+  <!-- Per Restaurant Chart -->
+  ${AppState.expenses.length > 0 ? `
+  <div class="grid-2" style="margin-top:20px">
+    <div class="card">
+      <h3>📊 Expenses by Restaurant</h3>
+      <div class="chart-container" style="height:220px"><canvas id="chartExpByRest"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>🥧 Expenses by Vendor</h3>
+      <div class="chart-container" style="height:220px"><canvas id="chartExpByVendor"></canvas></div>
+    </div>
+  </div>` : ''}`;
+
+  // Charts
+  if (AppState.expenses.length > 0) {
+    setTimeout(() => {
+      const ctx1 = document.getElementById('chartExpByRest');
+      if (ctx1) {
+        const restData = names.map(n => AppState.expenses.filter(e=>e.restaurant===n||e.restaurant==='All Restaurants').reduce((s,e)=>s+e.amount,0));
+        new Chart(ctx1, {
+          type: 'bar', indexAxis: 'y',
+          data: { labels: names, datasets: [{ label: 'Expenses', data: restData, backgroundColor: names.map(n=>getColor(n)+'cc'), borderRadius: 5 }] },
+          options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{ticks:{callback:v=>'$'+v.toLocaleString()}}} }
+        });
+      }
+      const ctx2 = document.getElementById('chartExpByVendor');
+      if (ctx2) {
+        const vColors = {'US Foods':'#1e40af','Webstaurant Store':'#15803d','Amazon':'#b45309','Other':'#6b7280'};
+        const vendorLabels = Object.keys(vendorStats).filter(v=>vendorStats[v].total>0);
+        new Chart(ctx2, {
+          type: 'doughnut',
+          data: { labels: vendorLabels, datasets: [{ data: vendorLabels.map(v=>vendorStats[v].total), backgroundColor: vendorLabels.map(v=>vColors[v]||'#888'), borderWidth: 2 }] },
+          options: { responsive:true, maintainAspectRatio:false, plugins:{legend:{position:'right',labels:{boxWidth:12,font:{size:11}}}} }
+        });
+      }
+    }, 100);
+  }
+};
+
+window.renderComparison = function(el) {
+  const names = getRestaurantNames();
+  const dates = getDates();
+  const dateLabels = dates.map(d => {
+    const dt = new Date(d+'T12:00:00');
+    return dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  });
+  const totalExp = getTotalExpenses();
+  const weekTotal = getGroupWeekTotal();
+
+  const compRows = names.map(name => {
+    const wk = getTotalByRestaurant(name);
+    const td = getTodayTotal(name);
+    const pct = weekTotal > 0 ? (wk/weekTotal*100).toFixed(1) : 0;
+    const col = getColor(name);
+    return `<tr>
+      <td><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:${col};display:inline-block"></span><strong>${name}</strong></span></td>
+      <td style="text-align:right">${fmt(td)}</td>
+      <td style="text-align:right;font-weight:700">${fmt(wk)}</td>
+      <td style="text-align:right">${pct}%</td>
+      <td>
+        <div style="background:#f0f2f5;border-radius:4px;height:8px;overflow:hidden;min-width:80px">
+          <div style="width:${pct}%;background:${col};height:100%;border-radius:4px"></div>
+        </div>
+      </td>
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = `
+  <div class="grid-2" style="margin-bottom:20px">
+    <div class="card">
+      <h3>📊 Weekly Sales by Restaurant</h3>
+      <div class="chart-container"><canvas id="chartComp"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>💰 Income vs. Expenses</h3>
+      <div class="chart-container"><canvas id="chartIE"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📋 Weekly Performance Summary</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Restaurant</th><th style="text-align:right">Today (Mar 25)</th><th style="text-align:right">Week Total</th><th style="text-align:right">Share %</th><th style="min-width:120px">Progress</th></tr></thead>
+        <tbody>${compRows}</tbody>
+        <tfoot><tr style="background:#f8f9fa;font-weight:700">
+          <td>GROUP TOTAL</td>
+          <td style="text-align:right">${fmt(getGroupTodayTotal())}</td>
+          <td style="text-align:right">${fmt(weekTotal)}</td>
+          <td style="text-align:right">100%</td>
+          <td></td>
+        </tr></tfoot>
+      </table>
+    </div>
+  </div>`;
+
+  setTimeout(() => {
+    const ctx1 = document.getElementById('chartComp');
+    if (ctx1) {
+      new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: dateLabels,
+          datasets: names.map(name => ({
+            label: name,
+            data: dates.map(d => {
+              const r = AppState.ingresosData.find(x=>x.date===d && x.restaurant===name);
+              return r ? r.net : 0;
+            }),
+            backgroundColor: getColor(name)+'cc',
+            borderColor: getColor(name),
+            borderWidth: 1,
+            borderRadius: 4
+          }))
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+          scales: { x: { stacked: true }, y: { stacked: true, ticks: { callback: v => '$'+v.toLocaleString() } } }
+        }
+      });
+    }
+
+    const ctx2 = document.getElementById('chartIE');
+    if (ctx2) {
+      new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: ['This Week'],
+          datasets: [
+            { label: 'Net Income', data: [weekTotal], backgroundColor: '#28a745cc', borderColor: '#28a745', borderWidth: 2, borderRadius: 6 },
+            { label: 'Expenses', data: [totalExp], backgroundColor: '#dc3545cc', borderColor: '#dc3545', borderWidth: 2, borderRadius: 6 }
+          ]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'bottom' } },
+          scales: { y: { ticks: { callback: v => '$'+v.toLocaleString() } } }
+        }
+      });
+    }
+  }, 100);
+};
+
+window.renderSettings = function(el) {
+  const cards = AppState.restaurants.map(r => {
+    const col = getColor(r.name);
+    const token = r.token || 'N/A';
+    const tokenDisplay = token.length > 20 ? token.substring(0,20)+'...' : token;
+    const wk = getTotalByRestaurant(r.name);
+    const lastSync = new Date().toLocaleTimeString('en-US');
+    return `<div class="config-card" style="border-left-color:${col}">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+        <div style="width:14px;height:14px;border-radius:50%;background:${col}"></div>
+        <div class="cfg-name">${r.name}</div>
+        <button class="refresh-btn" onclick="refreshRestaurant('${r.merchantId||r.id}', '${r.name}')">↻ Sync</button>
+      </div>
+      <div class="cfg-row"><span>Merchant ID</span><span style="font-family:monospace">${r.merchantId||r.id}</span></div>
+      <div class="cfg-row"><span>Weekly Net Sales</span><span style="font-weight:700;color:#1a1a2e">${fmt(wk)}</span></div>
+      <div class="cfg-row"><span>Color</span><span style="font-family:monospace">${col} <span style="display:inline-block;width:14px;height:14px;background:${col};border-radius:3px;vertical-align:middle"></span></span></div>
+      <div class="cfg-row"><span>Last Sync</span><span>${lastSync}</span></div>
+      <div class="cfg-token">Token: ${tokenDisplay}</div>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `
+  <div class="card" style="margin-bottom:20px">
+    <h3>⚙️ Add New Restaurant</h3>
+    <div class="expense-form">
+      <div class="form-grid">
+        <input type="text" id="newName" placeholder="Restaurant name">
+        <input type="text" id="newToken" placeholder="Clover API Token">
+        <input type="text" id="newMid" placeholder="Merchant ID">
+        <input type="color" id="newColor" value="#3f3267" title="Brand color">
+      </div>
+      <button class="btn btn-primary" onclick="addRestaurantFromSettings()">+ Connect Restaurant</button>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-bottom:16px">Connected Restaurants</div>
+  <div class="config-grid">${cards}</div>`;
+};
+
+window.fetchPaymentsForRestaurant = async function(name, token, mid) {
+  const dates = ['2026-03-20','2026-03-21','2026-03-22','2026-03-23','2026-03-24','2026-03-25'];
+  // Remove existing data for this restaurant
+  AppState.ingresosData = AppState.ingresosData.filter(d=>d.restaurant !== name);
+
+  for (const date of dates) {
+    const start = new Date(date+'T00:00:00-08:00').getTime();
+    const end = new Date(date+'T23:59:59-08:00').getTime();
+    let offset = 0; let totalAmt = 0; let totalTax = 0; let totalTips = 0; let hasData = false;
+    while (true) {
+      const url = `https://api.clover.com/v3/merchants/${mid}/payments?filter=result%3DSUCCESS&filter=createdTime%3E${start}&filter=createdTime%3C${end}&limit=200&offset=${offset}&expand=order`;
+      const resp = await fetch(url, { headers: { Authorization: 'Bearer '+token } });
+      if (!resp.ok) break;
+      const data = await resp.json();
+      const pmts = data.elements || [];
+      if (pmts.length === 0) break;
+      pmts.forEach(p => {
+        totalAmt += (p.amount||0);
+        totalTax += (p.taxAmount||0);
+        totalTips += (p.tipAmount||0);
+        hasData = true;
+      });
+      offset += pmts.length;
+      if (pmts.length < 200) break;
+    }
+    if (hasData) {
+      const gross = totalAmt / 100;
+      const tax = totalTax / 100;
+      const tips = totalTips / 100;
+      const net = (totalAmt - totalTax) / 100;
+      AppState.ingresosData.push({ date, restaurant: name, gross, discounts: 0, tax, tips, net });
+    }
+  }
+
+  const saved = JSON.parse(localStorage.getItem('dashboardData')||'{}');
+  saved.ingresosData = AppState.ingresosData;
+  localStorage.setItem('dashboardData', JSON.stringify(saved));
+  renderApp();
+};
+
+window.fetchOrderSalesDataV2 = async function fetchOrderSalesDataV2(rest) {
+  const { name, token, mid } = rest;
+  const dates = ['2026-03-20','2026-03-21','2026-03-22','2026-03-23','2026-03-24','2026-03-25'];
+  const itemMap = (window._itemMap && window._itemMap[name]) || {};
+  
+  const catSales = {};
+  const tagSales = {};
+  const itemSales = {};
+  let totalOrders = 0;
+  let totalRevenue = 0;
+
+  for (const date of dates) {
+    const start = new Date(date+'T00:00:00-08:00').getTime();
+    const end = new Date(date+'T23:59:59-08:00').getTime();
+    let offset = 0;
+    
+    while (true) {
+      // Use state=locked (closed orders) instead of paymentState
+      const url = `https://api.clover.com/v3/merchants/${mid}/orders?filter=createdTime%3E${start}&filter=createdTime%3C${end}&filter=state%3Dlocked&limit=100&offset=${offset}&expand=lineItems`;
+      const resp = await fetch(url, { headers: { Authorization: 'Bearer '+token } });
+      if (!resp.ok) break;
+      const data = await resp.json();
+      const orders = data.elements || [];
+      if (orders.length === 0) break;
+      
+      orders.forEach(order => {
+        totalOrders++;
+        const lineItems = (order.lineItems && order.lineItems.elements) || [];
+        lineItems.forEach(li => {
+          if (li.refunded || li.exchanged || !li.isRevenue) return;
+          const price = li.price || 0;
+          totalRevenue += price;
+          
+          const itemId = li.item ? li.item.id : null;
+          const itemInfo = itemId ? itemMap[itemId] : null;
+          
+          if (itemInfo && itemInfo.categories.length > 0) {
+            itemInfo.categories.forEach(cat => {
+              catSales[cat] = (catSales[cat] || 0) + price;
+            });
+          } else {
+            catSales['Other'] = (catSales['Other'] || 0) + price;
+          }
+          
+          if (itemInfo && itemInfo.tags.length > 0) {
+            itemInfo.tags.forEach(tag => {
+              if (!tag.startsWith('GL') && !tag.startsWith('Kitchen') && 
+                  !tag.startsWith('Expo') && tag !== 'Bar #1' && tag !== 'Bar #2' && 
+                  tag !== 'Bar #3' && !tag.startsWith('Server')) {
+                tagSales[tag] = (tagSales[tag] || 0) + price;
+              }
+            });
+          }
+          
+          const itemName = li.name || 'Unknown';
+          if (!itemSales[itemName]) itemSales[itemName] = { total: 0, count: 0 };
+          itemSales[itemName].total += price;
+          itemSales[itemName].count++;
+        });
+      });
+      
+      offset += orders.length;
+      if (orders.length < 100) break;
+    }
+  }
+  
+  const topItemsList = Object.entries(itemSales)
+    .map(([n, d]) => ({ name: n, total: d.total/100, count: d.count }))
+    .sort((a,b) => b.total - a.total).slice(0, 15);
+  
+  const catList = Object.entries(catSales)
+    .map(([cat, total]) => ({ cat, total: total/100 }))
+    .sort((a,b) => b.total - a.total);
+  
+  const tagList = Object.entries(tagSales)
+    .map(([tag, total]) => ({ tag, total: total/100 }))
+    .sort((a,b) => b.total - a.total);
+
+  window.categoryData[name] = catList;
+  window.topItems[name] = topItemsList;
+  window.orderStats[name] = { totalOrders, avgTicket: totalOrders > 0 ? (totalRevenue/100/totalOrders) : 0, tagSales: tagList };
+  
+  return { catList, topItemsList, totalOrders, totalRevenue: totalRevenue/100 };
+};
+
+window.fetchBasicStatsFromPayments = async function(rest) {
+  const { name, token, mid } = rest;
+  const dates = ['2026-03-20','2026-03-21','2026-03-22','2026-03-23','2026-03-24','2026-03-25'];
+  let totalPayments = 0;
+  let totalAmount = 0;
+  
+  for (const date of dates) {
+    const start = new Date(date+'T00:00:00-08:00').getTime();
+    const end = new Date(date+'T23:59:59-08:00').getTime();
+    let offset = 0;
+    while (true) {
+      const url = `https://api.clover.com/v3/merchants/${mid}/payments?filter=result%3DSUCCESS&filter=createdTime%3E${start}&filter=createdTime%3C${end}&limit=200&offset=${offset}`;
+      const resp = await fetch(url, { headers: { Authorization: 'Bearer '+token } });
+      if (!resp.ok) break;
+      const data = await resp.json();
+      const pmts = data.elements || [];
+      if (pmts.length === 0) break;
+      pmts.forEach(p => { totalPayments++; totalAmount += (p.amount||0); });
+      offset += pmts.length;
+      if (pmts.length < 200) break;
+    }
+  }
+  
+  window.orderStats[name] = {
+    totalOrders: totalPayments,
+    avgTicket: totalPayments > 0 ? (totalAmount/100/totalPayments) : 0,
+    tagSales: [],
+    paymentsBased: true
+  };
+  window.categoryData[name] = [];
+  window.topItems[name] = [];
+  return totalPayments;
+};
+
+window.addCloverAccount = function() {
+  AppState.restaurants.push({ id:'rest'+(AppState.restaurants.length+1), name:'Restaurante #'+(AppState.restaurants.length+1), token:'', merchantId:'' });
+  renderConfig();
+};
+
+window.renderBreakdown = function(el) {
+  const names = getRestaurantNames();
+  const dates = getDates();
+
+  const cards = names.map(name => {
+    const col = getColor(name);
+    const records = AppState.ingresosData.filter(d=>d.restaurant===name).sort((a,b)=>a.date<b.date?-1:1);
+    const totGross = records.reduce((s,r)=>s+(r.gross||0),0);
+    const totDisc = records.reduce((s,r)=>s+(r.discounts||0),0);
+    const totNet = records.reduce((s,r)=>s+r.net,0);
+    const totTax = records.reduce((s,r)=>s+(r.tax||0),0);
+    const totTips = records.reduce((s,r)=>s+(r.tips||0),0);
+
+    const dateRows = records.map(r => {
+      const dt = new Date(r.date+'T12:00:00');
+      const lbl = dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+      return `<div class="bc-row">
+        <span>${lbl}</span>
+        <span>${fmt(r.net)}</span>
+      </div>`;
+    }).join('');
+
+    return `<div class="breakdown-card">
+      <div class="bc-header" style="color:${col};border-bottom-color:${col}">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${col};margin-right:6px"></span>
+        ${name}
+      </div>
+      <div class="bc-row"><span style="color:#888">Gross Sales</span><span>${fmt(totGross)}</span></div>
+      <div class="bc-row"><span style="color:#888">Discounts</span><span class="neg">${totDisc>0?'-'+fmt(totDisc):'$0.00'}</span></div>
+      <div class="bc-row total"><span>Net Sales</span><span>${fmt(totNet)}</span></div>
+      <div class="bc-row"><span style="color:#888">Tax</span><span>${fmt(totTax)}</span></div>
+      <div class="bc-row"><span style="color:#888">Tips</span><span>${fmt(totTips)}</span></div>
+      <div style="margin-top:12px;padding-top:8px;border-top:1px solid #eee;font-size:12px;font-weight:600;color:#555;margin-bottom:6px">Daily Breakdown</div>
+      ${dateRows}
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `
+  <div style="margin-bottom:16px">
+    <div class="section-title">🔍 Detailed Breakdown by Restaurant</div>
+    <p style="color:#888;font-size:13px">Mar 20–25, 2026 · Net Sales = Gross - Discounts · Source: Clover API</p>
+  </div>
+  <div class="breakdown-grid">${cards}</div>`;
+};
+
+// --- Init ---
+window.addEventListener('DOMContentLoaded', () => {
+  renderApp();
+});
+</script>
+</body>
+</html>
