@@ -45,43 +45,43 @@ const EMBEDDED_DATA = {
       "name": "Toast Brea",
       "merchantId": "Y6VPGW62AZ551",
       "color": "#3f3267",
-      "token": ""
+      "token": "a9e1e120-a131-81a8-a2fc-f4a4c753fa82"
     },
     {
       "name": "Story Whittier",
       "merchantId": "1T98P9RX1GJ91",
       "color": "#2f7d88",
-      "token": ""
+      "token": "1f39eb6f-e46e-7a07-aae7-845eccb9df88"
     },
     {
       "name": "Benny and Mary's",
       "merchantId": "GHQ19WN06XY51",
       "color": "#b6904e",
-      "token": ""
+      "token": "74b3b744-30de-1cc4-e96f-89a91309fe6f"
     },
     {
       "name": "The Benediction",
       "merchantId": "CSRYW9BYGBBX1",
       "color": "#a8a8a8",
-      "token": ""
+      "token": "c5437709-78db-0f45-9acd-0a20bae95be9"
     },
     {
       "name": "Story Anaheim",
       "merchantId": "5VYJTMSVMSSF1",
       "color": "#9d231e",
-      "token": ""
+      "token": "f4a00407-85f3-d2a1-7997-ca9497862eb0"
     },
     {
       "name": "Toast Downey",
       "merchantId": "HC6YRQCVV95K1",
       "color": "#dba6a4",
-      "token": ""
+      "token": "532395f3-5396-f360-632d-de475188e934"
     },
     {
       "name": "Little Toast",
       "merchantId": "V3SEBWCSE6SW1",
       "color": "#e09050",
-      "token": ""
+      "token": "2b0fdba9-d8de-e77c-98b9-eb20626556db"
     }
   ],
   "colorMap": {
@@ -2681,6 +2681,18 @@ window.buildDeepDivePanels = function(sel1, sel2) {
 };
 
 window.allRestaurants = AppState.restaurants;
+
+// Auto-load tokens from EMBEDDED_DATA into AppState on startup
+AppState.restaurants.forEach(r => {
+  const embedded = EMBEDDED_DATA.restaurants.find(e => e.name === r.name);
+  if (embedded && embedded.token && !r.token) {
+    r.token = embedded.token;
+  }
+});
+// Save to localStorage so Settings tab shows tokens
+localStorage.setItem('trgRestaurants', JSON.stringify(AppState.restaurants));
+// Auto-sync all restaurants on page load
+setTimeout(() => { if (typeof window.syncAllData === 'function') window.syncAllData(); }, 500);
 // Initialize vendorConfig for Expenses tab
 window.vendorConfig = window.vendorConfig || {
   'all':                { color: '#6366f1', icon: '📦' },
