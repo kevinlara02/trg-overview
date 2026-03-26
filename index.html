@@ -2576,6 +2576,7 @@ const saveExpenses = () => localStorage.setItem('trgExpenses', JSON.stringify(Ap
 const CLOVER_BASE = 'https://api.clover.com/v3/merchants';
 
 // --- All Functions ---
+window.activeTab = window.activeTab || 'dashboard';
 window.getDates = () => {
   const dates = [...new Set(AppState.ingresosData.map(d=>d.date))].sort();
   return dates;
