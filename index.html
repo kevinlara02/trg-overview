@@ -2576,6 +2576,30 @@ const saveExpenses = () => localStorage.setItem('trgExpenses', JSON.stringify(Ap
 const CLOVER_BASE = 'https://api.clover.com/v3/merchants';
 
 // --- All Functions ---
+window.getDates = () => {
+  const dates = [...new Set(AppState.ingresosData.map(d=>d.date))].sort();
+  return dates;
+};
+window.fmt = (n) => '$' + (n||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+window.getColor = (name) => window.colorMap[name] || '#888';
+window.getTodayTotal = (name) => {
+  const today = '2026-03-25';
+  return AppState.ingresosData.filter(d=>d.restaurant===name && d.date===today).reduce((s,d)=>s+d.net,0);
+};
+window.getTotalByRestaurant = (name) => {
+  return AppState.ingresosData.filter(d=>d.restaurant===name).reduce((s,d)=>s+d.net,0);
+};
+window.getGroupWeekTotal = () => AppState.ingresosData.reduce((s,d)=>s+d.net,0);
+window.getGroupTodayTotal = () => {
+  const today = '2026-03-25';
+  return AppState.ingresosData.filter(d=>d.date===today).reduce((s,d)=>s+d.net,0);
+};
+window.getTotalExpenses = () => AppState.expenses.reduce((s,e)=>s+e.amount,0);
+window.updateRestaurantSelectors = function() {};
+window.syncAllData = async function() { for (const r of AppState.restaurants) { try { await fetchPaymentsForRestaurant(r.name, r.token, r.merchantId||r.id); } catch(e) { console.warn('Error syncing '+r.name, e); } } renderApp(); };
+window.refreshRestaurant = async function(name) { const r = AppState.restaurants.find(x=>x.name===name); if (r) { await fetchPaymentsForRestaurant(r.name, r.token, r.merchantId||r.id); renderApp(); } };
+window.addRestaurantFromSettings = function() { const n=document.getElementById('set-name')?.value; const t=document.getElementById('set-token')?.value; const m=document.getElementById('set-merchant')?.value; if(!n||!t||!m){alert('Fill all fields');return;} AppState.restaurants.push({name:n,token:t,merchantId:m,color:'#888'}); renderSettings(); };
+window.getRestaurantNames = () => AppState.restaurants.map(r => r.name);
 window.renderApp = function() {
   const names = window.allRestaurants ? window.allRestaurants.map(r=>r.name) : getRestaurantNames();
   const now = new Date().toLocaleTimeString('en-US');
