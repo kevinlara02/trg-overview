@@ -2582,7 +2582,7 @@ const el   = id => document.getElementById(id);
 const saveExpenses = () => localStorage.setItem('trgExpenses', JSON.stringify(AppState.expenses));
 
 // --- API ---
-const CLOVER_BASE = 'https://api.clover.com/v3/merchants';
+const CLOVER_BASE = 'https://corsproxy.io/?url=https://api.clover.com/v3/merchants';
 
 // --- All Functions ---
 window.buildDeepDivePanels = function(sel1, sel2) {
@@ -3795,7 +3795,7 @@ window.fetchPaymentsForRestaurant = async function(name, token, mid) {
     const end = new Date(date+'T23:59:59-08:00').getTime();
     let offset = 0; let totalAmt = 0; let totalTax = 0; let totalTips = 0; let hasData = false;
     while (true) {
-      const url = `https://api.clover.com/v3/merchants/${mid}/payments?filter=result%3DSUCCESS&filter=createdTime%3E${start}&filter=createdTime%3C${end}&limit=200&offset=${offset}&expand=order`;
+      const url = `https://corsproxy.io/?url=https://api.clover.com/v3/merchants/${mid}/payments?filter=result%3DSUCCESS&filter=createdTime%3E${start}&filter=createdTime%3C${end}&limit=200&offset=${offset}&expand=order`;
       const resp = await fetch(url, { headers: { Authorization: 'Bearer '+token } });
       if (!resp.ok) break;
       const data = await resp.json();
@@ -3843,7 +3843,7 @@ window.fetchOrderSalesDataV2 = async function fetchOrderSalesDataV2(rest) {
     
     while (true) {
       // Use state=locked (closed orders) instead of paymentState
-      const url = `https://api.clover.com/v3/merchants/${mid}/orders?filter=createdTime%3E${start}&filter=createdTime%3C${end}&filter=state%3Dlocked&limit=100&offset=${offset}&expand=lineItems`;
+      const url = `https://corsproxy.io/?url=https://api.clover.com/v3/merchants/${mid}/orders?filter=createdTime%3E${start}&filter=createdTime%3C${end}&filter=state%3Dlocked&limit=100&offset=${offset}&expand=lineItems`;
       const resp = await fetch(url, { headers: { Authorization: 'Bearer '+token } });
       if (!resp.ok) break;
       const data = await resp.json();
@@ -3921,7 +3921,7 @@ window.fetchBasicStatsFromPayments = async function(rest) {
     const end = new Date(date+'T23:59:59-08:00').getTime();
     let offset = 0;
     while (true) {
-      const url = `https://api.clover.com/v3/merchants/${mid}/payments?filter=result%3DSUCCESS&filter=createdTime%3E${start}&filter=createdTime%3C${end}&limit=200&offset=${offset}`;
+      const url = `https://corsproxy.io/?url=https://api.clover.com/v3/merchants/${mid}/payments?filter=result%3DSUCCESS&filter=createdTime%3E${start}&filter=createdTime%3C${end}&limit=200&offset=${offset}`;
       const resp = await fetch(url, { headers: { Authorization: 'Bearer '+token } });
       if (!resp.ok) break;
       const data = await resp.json();
